@@ -2,8 +2,8 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
-use TCG\Voyager\Models\Role;
-use TCG\Voyager\Models\User;
+use App\Role;
+use App\User;
 
 class UsersTableSeeder extends Seeder
 {
@@ -14,6 +14,8 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
+        $faker = \Faker\Factory::create();
+
         if (User::count() == 0) {
             $role = Role::where('name', 'admin')->firstOrFail();
 
@@ -23,6 +25,27 @@ class UsersTableSeeder extends Seeder
                 'password'       => bcrypt('password'),
                 'remember_token' => Str::random(60),
                 'role_id'        => $role->id,
+            ]);
+        }
+
+        $role = Role::where('name', 'farmer')->firstOrFail();
+        foreach (range(1, 2) as $index) {
+            \App\User::create([
+                'role_id'  => $role->id,
+                'name'     => "$faker->firstName $faker->lastName",
+                'email'    => $faker->email,
+                'password' => bcrypt('password')
+            ]);
+        }
+
+        $role = Role::where('name', 'user')->firstOrFail();
+        foreach (range(1, 10) as $index) {
+            $name = "$faker->firstName $faker->lastName";
+            \App\User::create([
+                'role_id'  => $role->id,
+                'name'     => "$faker->firstName $faker->lastName",
+                'email'    => $faker->email,
+                'password' => bcrypt('password')
             ]);
         }
     }

@@ -39,6 +39,7 @@ To install Voyager without dummy simply run
 $ php artisan config:cache
 $ php artisan make:auth
 $ php artisan voyager:install
+$ php artisan db:seed
 ```
 
 If you prefer installing it with dummy run

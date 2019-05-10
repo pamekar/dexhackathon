@@ -36,27 +36,10 @@ class ProductController extends Controller
 
         // return product lists
         // $products = Product::all();
-        $products = Product::limit(4)->get();
+        $products = Product::inRandomOrder()->limit(8)->get();
         // $products = Product::find(1);
 
-        // return $products;
-        $product_array =  array();
-
-        foreach ($products as $product)
-        {
-            $product_list = [
-                'prooduct_id' => $product->id,
-                'product_name' => $product->product_name,
-                // 'farmer_rating' => mt_rand(1, 5),
-                'amount' => $product->amount,
-                'category' => $product->category->name,
-                'product_image' => url('/images/product.jpg')
-            ];
-
-            array_push($product_array, $product_list);
-        }
-
-        return response()->json($product_array);
+        return view('');
 
     }
 
@@ -73,7 +56,8 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -84,7 +68,8 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -93,11 +78,11 @@ class ProductController extends Controller
         $product = Product::find($id);
 
         $product_list = [
-            'prooduct_id' => $product->id,
-            'product_name' => $product->product_name,
+            'prooduct_id'   => $product->id,
+            'product_name'  => $product->product_name,
             'farmer_rating' => mt_rand(1, 5),
-            'amount' => $product->amount,
-            'category' => $product->category->name,
+            'amount'        => $product->amount,
+            'category'      => $product->category->name,
             'product_image' => url('/images/product.jpeg')
         ];
 
@@ -107,7 +92,8 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -118,8 +104,9 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int                      $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -131,11 +118,11 @@ class ProductController extends Controller
         $product->save();
 
         $product_list = [
-            'prooduct_id' => $product->id,
-            'product_name' => $product->product_name,
+            'prooduct_id'   => $product->id,
+            'product_name'  => $product->product_name,
             'farmer_rating' => mt_rand(1, 5),
-            'amount' => $product->amount,
-            'category' => $product->category->name,
+            'amount'        => $product->amount,
+            'category'      => $product->category->name,
             'product_image' => url('/images/product.jpeg')
         ];
 
@@ -145,7 +132,8 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -159,6 +147,7 @@ class ProductController extends Controller
     /**
      * Check for the user location
      * This is mocked
+     *
      * @return Array
      */
     public function checkLocation()

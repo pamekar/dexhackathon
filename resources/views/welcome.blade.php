@@ -1,3 +1,6 @@
+@php
+    $faker = \Faker\Factory::create();
+@endphp
 @extends('layouts.app')
 @section('content')
     <section class="flat-title-page parallax parallax12 undescription">
@@ -44,9 +47,54 @@
                 <div class="tab-content-wrap">
                     <div class="tab-content">
                         <div class="item-content">
-                            <div class="flat-carousel" data-column="4" data-column2="2" data-loop="false"  data-column3="1" data-gap ="0" data-dots="false" data-nav="true">
+                            <div class="flat-carousel" data-column="4" data-column2="2" data-loop="false"
+                                 data-column3="1" data-gap="0" data-dots="false" data-nav="true">
                                 <div class="flat-courses clearfix owl-carousel">
-                                    <div class="course  text-2ebd59  Leadership">
+                                    @foreach($products as $product)
+                                        <div class="course  text-2ebd59  Leadership">
+                                            <div class="course-border border-f-e6f3ff border-ra4 transition-vline">
+                                                <div class="course-img img-vline">
+                                                    <a href="#"><img src="png/courses-gird-v1-6.png"
+                                                                     alt="bookflare"></a>
+                                                    <div class="overlay">
+                                                        <span class="vline"></span>
+                                                        <span class="vline vline-bottom"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="course-content">
+                                                    <div class="text-wrap border-bt-e6f3ff">
+                                                        <h6 class="title"><a href="#">{{$product->product_name}}</a>
+                                                        </h6>
+                                                        <p class="teacher"><a href="#">{{$product->user->name}}</a></p>
+                                                        <p class="description">{{$faker->paragraph}}</p>
+                                                    </div>
+                                                    <div class="wrap-rating-price">
+                                                        <div class="wrap-rating">
+                                                            <ul class="list star-list">
+                                                                <li><i class="far fa-star"></i></li>
+                                                                <li><i class="far fa-star"></i></li>
+                                                                <li><i class="far fa-star"></i></li>
+                                                                <li><i class="far fa-star"></i></li>
+                                                                <li><i class="far fa-star"></i></li>
+                                                            </ul>
+                                                            <span>{{mt_rand(420,499)/100}}  ({{mt_rand(200,1000)}})</span>
+                                                        </div>
+                                                        <span class="price">&euro; {{$product->amount}}/kg</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> <!-- /.course -->
+                                    @endforeach
+                                </div> <!-- /.flat-courses -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-content">
+                        <div class="item-content">
+                            <div class="flat-carousel" data-column="4" data-column2="2" data-loop="false"
+                                 data-column3="1" data-gap="0" data-dots="false" data-nav="true">
+                                <div class="flat-courses clearfix owl-carousel">
+                                    <div class="course  text-c100ea Leadership">
                                         <div class="course-border border-f-e6f3ff border-ra4 transition-vline">
                                             <div class="course-img img-vline">
                                                 <a href="#"><img src="png/courses-gird-v1-6.png" alt="bookflare"></a>
@@ -57,9 +105,11 @@
                                             </div>
                                             <div class="course-content">
                                                 <div class="text-wrap border-bt-e6f3ff">
-                                                    <h6 class="title"><a href="#">Angular 6 - The Complete Guide</a></h6>
+                                                    <h6 class="title"><a href="#">Angular 6 - The Complete Guide</a>
+                                                    </h6>
                                                     <p class="teacher"><a href="#">Rosy Janner</a></p>
-                                                    <p class="description">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
+                                                    <p class="description">Lorem Ipsum has been the industry’s standard
+                                                        dummy text ever since the 1500s.</p>
                                                 </div>
                                                 <div class="wrap-rating-price">
                                                     <div class="wrap-rating">
@@ -77,7 +127,7 @@
                                             </div>
                                         </div>
                                     </div> <!-- /.course -->
-                                    <div class="course  text-2ebd59  Design">
+                                    <div class="course  text-ea0042 Design">
                                         <div class="course-border border-f-e6f3ff border-ra4 transition-vline">
                                             <div class="course-img img-vline">
                                                 <a href="#"><img src="png/courses-gird-v1-7.png" alt="bookflare"></a>
@@ -90,7 +140,8 @@
                                                 <div class="text-wrap border-bt-e6f3ff">
                                                     <h6 class="title"><a href="#">Complete Java Masterclass</a></h6>
                                                     <p class="teacher"><a href="#">Tom Steven</a></p>
-                                                    <p class="description">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
+                                                    <p class="description">Lorem Ipsum has been the industry’s standard
+                                                        dummy text ever since the 1500s.</p>
                                                 </div>
                                                 <div class="wrap-rating-price">
                                                     <div class="wrap-rating">
@@ -121,7 +172,8 @@
                                                 <div class="text-wrap border-bt-e6f3ff">
                                                     <h6 class="title"><a href="#">React 16 - The Complete Guide</a></h6>
                                                     <p class="teacher"><a href="#">Mark Henrey</a></p>
-                                                    <p class="description">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
+                                                    <p class="description">Lorem Ipsum has been the industry’s standard
+                                                        dummy text ever since the 1500s.</p>
                                                 </div>
                                                 <div class="wrap-rating-price">
                                                     <div class="wrap-rating">
@@ -152,7 +204,8 @@
                                                 <div class="text-wrap border-bt-e6f3ff">
                                                     <h6 class="title"><a href="#">Node.js Developer Course</a></h6>
                                                     <p class="teacher"><a href="#">Ana Murphy</a></p>
-                                                    <p class="description">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
+                                                    <p class="description">Lorem Ipsum has been the industry’s standard
+                                                        dummy text ever since the 1500s.</p>
                                                 </div>
                                                 <div class="wrap-rating-price">
                                                     <div class="wrap-rating">
@@ -183,7 +236,8 @@
                                                 <div class="text-wrap border-bt-e6f3ff">
                                                     <h6 class="title"><a href="#">The Ultimate Drawing Course</a></h6>
                                                     <p class="teacher"><a href="#">Rosy Janner</a></p>
-                                                    <p class="description">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
+                                                    <p class="description">Lorem Ipsum has been the industry’s standard
+                                                        dummy text ever since the 1500s.</p>
                                                 </div>
                                                 <div class="wrap-rating-price">
                                                     <div class="wrap-rating">
@@ -212,9 +266,11 @@
                                             </div>
                                             <div class="course-content">
                                                 <div class="text-wrap border-bt-e6f3ff">
-                                                    <h6 class="title"><a href="#">Learn Python & Ethical Hacking</a></h6>
+                                                    <h6 class="title"><a href="#">Learn Python & Ethical Hacking</a>
+                                                    </h6>
                                                     <p class="teacher"><a href="#">Tom Steven</a></p>
-                                                    <p class="description">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
+                                                    <p class="description">Lorem Ipsum has been the industry’s standard
+                                                        dummy text ever since the 1500s.</p>
                                                 </div>
                                                 <div class="wrap-rating-price">
                                                     <div class="wrap-rating">
@@ -245,7 +301,8 @@
                                                 <div class="text-wrap border-bt-e6f3ff">
                                                     <h6 class="title"><a href="#">Advanced CSS Flexbox</a></h6>
                                                     <p class="teacher"><a href="#">Mark Henrey</a></p>
-                                                    <p class="description">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
+                                                    <p class="description">Lorem Ipsum has been the industry’s standard
+                                                        dummy text ever since the 1500s.</p>
                                                 </div>
                                                 <div class="wrap-rating-price">
                                                     <div class="wrap-rating">
@@ -269,7 +326,8 @@
                     </div>
                     <div class="tab-content">
                         <div class="item-content">
-                            <div class="flat-carousel" data-column="4" data-column2="2" data-loop="false"  data-column3="1" data-gap ="0" data-dots="false" data-nav="true">
+                            <div class="flat-carousel" data-column="4" data-column2="2" data-loop="false"
+                                 data-column3="1" data-gap="0" data-dots="false" data-nav="true">
                                 <div class="flat-courses clearfix owl-carousel">
                                     <div class="course  text-c100ea Leadership">
                                         <div class="course-border border-f-e6f3ff border-ra4 transition-vline">
@@ -282,9 +340,11 @@
                                             </div>
                                             <div class="course-content">
                                                 <div class="text-wrap border-bt-e6f3ff">
-                                                    <h6 class="title"><a href="#">Angular 6 - The Complete Guide</a></h6>
+                                                    <h6 class="title"><a href="#">Angular 6 - The Complete Guide</a>
+                                                    </h6>
                                                     <p class="teacher"><a href="#">Rosy Janner</a></p>
-                                                    <p class="description">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
+                                                    <p class="description">Lorem Ipsum has been the industry’s standard
+                                                        dummy text ever since the 1500s.</p>
                                                 </div>
                                                 <div class="wrap-rating-price">
                                                     <div class="wrap-rating">
@@ -315,7 +375,8 @@
                                                 <div class="text-wrap border-bt-e6f3ff">
                                                     <h6 class="title"><a href="#">Complete Java Masterclass</a></h6>
                                                     <p class="teacher"><a href="#">Tom Steven</a></p>
-                                                    <p class="description">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
+                                                    <p class="description">Lorem Ipsum has been the industry’s standard
+                                                        dummy text ever since the 1500s.</p>
                                                 </div>
                                                 <div class="wrap-rating-price">
                                                     <div class="wrap-rating">
@@ -346,7 +407,8 @@
                                                 <div class="text-wrap border-bt-e6f3ff">
                                                     <h6 class="title"><a href="#">React 16 - The Complete Guide</a></h6>
                                                     <p class="teacher"><a href="#">Mark Henrey</a></p>
-                                                    <p class="description">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
+                                                    <p class="description">Lorem Ipsum has been the industry’s standard
+                                                        dummy text ever since the 1500s.</p>
                                                 </div>
                                                 <div class="wrap-rating-price">
                                                     <div class="wrap-rating">
@@ -377,100 +439,8 @@
                                                 <div class="text-wrap border-bt-e6f3ff">
                                                     <h6 class="title"><a href="#">Node.js Developer Course</a></h6>
                                                     <p class="teacher"><a href="#">Ana Murphy</a></p>
-                                                    <p class="description">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
-                                                </div>
-                                                <div class="wrap-rating-price">
-                                                    <div class="wrap-rating">
-                                                        <ul class="list star-list">
-                                                            <li><i class="far fa-star"></i></li>
-                                                            <li><i class="far fa-star"></i></li>
-                                                            <li><i class="far fa-star"></i></li>
-                                                            <li><i class="far fa-star"></i></li>
-                                                            <li><i class="far fa-star"></i></li>
-                                                        </ul>
-                                                        <span>5.0  (980)</span>
-                                                    </div>
-                                                    <span class="price">FREE</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> <!-- /.course -->
-                                    <div class="course  text-ea0042 Leadership Photography">
-                                        <div class="course-border border-f-e6f3ff border-ra4 transition-vline">
-                                            <div class="course-img img-vline">
-                                                <a href="#"><img src="png/courses-gird-v1-10.png" alt="bookflare"></a>
-                                                <div class="overlay">
-                                                    <span class="vline"></span>
-                                                    <span class="vline vline-bottom"></span>
-                                                </div>
-                                            </div>
-                                            <div class="course-content">
-                                                <div class="text-wrap border-bt-e6f3ff">
-                                                    <h6 class="title"><a href="#">The Ultimate Drawing Course</a></h6>
-                                                    <p class="teacher"><a href="#">Rosy Janner</a></p>
-                                                    <p class="description">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
-                                                </div>
-                                                <div class="wrap-rating-price">
-                                                    <div class="wrap-rating">
-                                                        <ul class="list star-list">
-                                                            <li><i class="far fa-star"></i></li>
-                                                            <li><i class="far fa-star"></i></li>
-                                                            <li><i class="far fa-star"></i></li>
-                                                            <li><i class="far fa-star"></i></li>
-                                                            <li><i class="far fa-star"></i></li>
-                                                        </ul>
-                                                        <span>5.0  (980)</span>
-                                                    </div>
-                                                    <span class="price">$49.00</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> <!-- /.course -->
-                                    <div class="course   text-c100ea Business Leadership Photography">
-                                        <div class="course-border border-f-e6f3ff border-ra4 transition-vline">
-                                            <div class="course-img img-vline">
-                                                <a href="#"><img src="png/courses-gird-v1-11.png" alt="bookflare"></a>
-                                                <div class="overlay">
-                                                    <span class="vline"></span>
-                                                    <span class="vline vline-bottom"></span>
-                                                </div>
-                                            </div>
-                                            <div class="course-content">
-                                                <div class="text-wrap border-bt-e6f3ff">
-                                                    <h6 class="title"><a href="#">Learn Python & Ethical Hacking</a></h6>
-                                                    <p class="teacher"><a href="#">Tom Steven</a></p>
-                                                    <p class="description">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
-                                                </div>
-                                                <div class="wrap-rating-price">
-                                                    <div class="wrap-rating">
-                                                        <ul class="list star-list">
-                                                            <li><i class="far fa-star"></i></li>
-                                                            <li><i class="far fa-star"></i></li>
-                                                            <li><i class="far fa-star"></i></li>
-                                                            <li><i class="far fa-star"></i></li>
-                                                            <li><i class="far fa-star"></i></li>
-                                                        </ul>
-                                                        <span>5.0  (980)</span>
-                                                    </div>
-                                                    <span class="price">$24.00</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> <!-- /.course -->
-                                    <div class="course  text-256cff Photography">
-                                        <div class="course-border border-f-e6f3ff border-ra4 transition-vline">
-                                            <div class="course-img img-vline">
-                                                <a href="#"><img src="png/courses-gird-v1-12.png" alt="bookflare"></a>
-                                                <div class="overlay">
-                                                    <span class="vline"></span>
-                                                    <span class="vline vline-bottom"></span>
-                                                </div>
-                                            </div>
-                                            <div class="course-content">
-                                                <div class="text-wrap border-bt-e6f3ff">
-                                                    <h6 class="title"><a href="#">Advanced CSS Flexbox</a></h6>
-                                                    <p class="teacher"><a href="#">Mark Henrey</a></p>
-                                                    <p class="description">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
+                                                    <p class="description">Lorem Ipsum has been the industry’s standard
+                                                        dummy text ever since the 1500s.</p>
                                                 </div>
                                                 <div class="wrap-rating-price">
                                                     <div class="wrap-rating">
@@ -494,7 +464,8 @@
                     </div>
                     <div class="tab-content">
                         <div class="item-content">
-                            <div class="flat-carousel" data-column="4" data-column2="2" data-loop="false"  data-column3="1" data-gap ="0" data-dots="false" data-nav="true">
+                            <div class="flat-carousel" data-column="4" data-column2="2" data-loop="false"
+                                 data-column3="1" data-gap="0" data-dots="false" data-nav="true">
                                 <div class="flat-courses clearfix owl-carousel">
                                     <div class="course  text-c100ea Leadership">
                                         <div class="course-border border-f-e6f3ff border-ra4 transition-vline">
@@ -507,9 +478,11 @@
                                             </div>
                                             <div class="course-content">
                                                 <div class="text-wrap border-bt-e6f3ff">
-                                                    <h6 class="title"><a href="#">Angular 6 - The Complete Guide</a></h6>
+                                                    <h6 class="title"><a href="#">Angular 6 - The Complete Guide</a>
+                                                    </h6>
                                                     <p class="teacher"><a href="#">Rosy Janner</a></p>
-                                                    <p class="description">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
+                                                    <p class="description">Lorem Ipsum has been the industry’s standard
+                                                        dummy text ever since the 1500s.</p>
                                                 </div>
                                                 <div class="wrap-rating-price">
                                                     <div class="wrap-rating">
@@ -540,139 +513,8 @@
                                                 <div class="text-wrap border-bt-e6f3ff">
                                                     <h6 class="title"><a href="#">Complete Java Masterclass</a></h6>
                                                     <p class="teacher"><a href="#">Tom Steven</a></p>
-                                                    <p class="description">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
-                                                </div>
-                                                <div class="wrap-rating-price">
-                                                    <div class="wrap-rating">
-                                                        <ul class="list star-list">
-                                                            <li><i class="far fa-star"></i></li>
-                                                            <li><i class="far fa-star"></i></li>
-                                                            <li><i class="far fa-star"></i></li>
-                                                            <li><i class="far fa-star"></i></li>
-                                                            <li><i class="far fa-star"></i></li>
-                                                        </ul>
-                                                        <span>5.0  (980)</span>
-                                                    </div>
-                                                    <span class="price">$24.00</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> <!-- /.course -->
-                                    <div class="course  text-2ebd59 Leadership">
-                                        <div class="course-border border-f-e6f3ff border-ra4 transition-vline">
-                                            <div class="course-img img-vline">
-                                                <a href="#"><img src="png/courses-gird-v1-8.png" alt="bookflare"></a>
-                                                <div class="overlay">
-                                                    <span class="vline"></span>
-                                                    <span class="vline vline-bottom"></span>
-                                                </div>
-                                            </div>
-                                            <div class="course-content">
-                                                <div class="text-wrap border-bt-e6f3ff">
-                                                    <h6 class="title"><a href="#">React 16 - The Complete Guide</a></h6>
-                                                    <p class="teacher"><a href="#">Mark Henrey</a></p>
-                                                    <p class="description">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
-                                                </div>
-                                                <div class="wrap-rating-price">
-                                                    <div class="wrap-rating">
-                                                        <ul class="list star-list">
-                                                            <li><i class="far fa-star"></i></li>
-                                                            <li><i class="far fa-star"></i></li>
-                                                            <li><i class="far fa-star"></i></li>
-                                                            <li><i class="far fa-star"></i></li>
-                                                            <li><i class="far fa-star"></i></li>
-                                                        </ul>
-                                                        <span>5.0  (980)</span>
-                                                    </div>
-                                                    <span class="price">$89.00</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> <!-- /.course -->
-                                    <div class="course  text-2ebd59 Design">
-                                        <div class="course-border border-f-e6f3ff border-ra4 transition-vline">
-                                            <div class="course-img img-vline">
-                                                <a href="#"><img src="png/courses-gird-v1-9.png" alt="bookflare"></a>
-                                                <div class="overlay">
-                                                    <span class="vline"></span>
-                                                    <span class="vline vline-bottom"></span>
-                                                </div>
-                                            </div>
-                                            <div class="course-content">
-                                                <div class="text-wrap border-bt-e6f3ff">
-                                                    <h6 class="title"><a href="#">Node.js Developer Course</a></h6>
-                                                    <p class="teacher"><a href="#">Ana Murphy</a></p>
-                                                    <p class="description">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
-                                                </div>
-                                                <div class="wrap-rating-price">
-                                                    <div class="wrap-rating">
-                                                        <ul class="list star-list">
-                                                            <li><i class="far fa-star"></i></li>
-                                                            <li><i class="far fa-star"></i></li>
-                                                            <li><i class="far fa-star"></i></li>
-                                                            <li><i class="far fa-star"></i></li>
-                                                            <li><i class="far fa-star"></i></li>
-                                                        </ul>
-                                                        <span>5.0  (980)</span>
-                                                    </div>
-                                                    <span class="price">FREE</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> <!-- /.course -->
-                                </div> <!-- /.flat-courses -->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-content">
-                        <div class="item-content">
-                            <div class="flat-carousel" data-column="4" data-column2="2" data-loop="false"  data-column3="1" data-gap ="0" data-dots="false" data-nav="true">
-                                <div class="flat-courses clearfix owl-carousel">
-                                    <div class="course  text-c100ea Leadership">
-                                        <div class="course-border border-f-e6f3ff border-ra4 transition-vline">
-                                            <div class="course-img img-vline">
-                                                <a href="#"><img src="png/courses-gird-v1-6.png" alt="bookflare"></a>
-                                                <div class="overlay">
-                                                    <span class="vline"></span>
-                                                    <span class="vline vline-bottom"></span>
-                                                </div>
-                                            </div>
-                                            <div class="course-content">
-                                                <div class="text-wrap border-bt-e6f3ff">
-                                                    <h6 class="title"><a href="#">Angular 6 - The Complete Guide</a></h6>
-                                                    <p class="teacher"><a href="#">Rosy Janner</a></p>
-                                                    <p class="description">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
-                                                </div>
-                                                <div class="wrap-rating-price">
-                                                    <div class="wrap-rating">
-                                                        <ul class="list star-list">
-                                                            <li><i class="far fa-star"></i></li>
-                                                            <li><i class="far fa-star"></i></li>
-                                                            <li><i class="far fa-star"></i></li>
-                                                            <li><i class="far fa-star"></i></li>
-                                                            <li><i class="far fa-star"></i></li>
-                                                        </ul>
-                                                        <span>5.0  (980)</span>
-                                                    </div>
-                                                    <span class="price">$49.00</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> <!-- /.course -->
-                                    <div class="course  text-ea0042 Design">
-                                        <div class="course-border border-f-e6f3ff border-ra4 transition-vline">
-                                            <div class="course-img img-vline">
-                                                <a href="#"><img src="png/courses-gird-v1-7.png" alt="bookflare"></a>
-                                                <div class="overlay">
-                                                    <span class="vline"></span>
-                                                    <span class="vline vline-bottom"></span>
-                                                </div>
-                                            </div>
-                                            <div class="course-content">
-                                                <div class="text-wrap border-bt-e6f3ff">
-                                                    <h6 class="title"><a href="#">Complete Java Masterclass</a></h6>
-                                                    <p class="teacher"><a href="#">Tom Steven</a></p>
-                                                    <p class="description">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
+                                                    <p class="description">Lorem Ipsum has been the industry’s standard
+                                                        dummy text ever since the 1500s.</p>
                                                 </div>
                                                 <div class="wrap-rating-price">
                                                     <div class="wrap-rating">
@@ -703,7 +545,8 @@
                                                 <div class="text-wrap border-bt-e6f3ff">
                                                     <h6 class="title"><a href="#">The Ultimate Drawing Course</a></h6>
                                                     <p class="teacher"><a href="#">Rosy Janner</a></p>
-                                                    <p class="description">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
+                                                    <p class="description">Lorem Ipsum has been the industry’s standard
+                                                        dummy text ever since the 1500s.</p>
                                                 </div>
                                                 <div class="wrap-rating-price">
                                                     <div class="wrap-rating">
@@ -732,9 +575,11 @@
                                             </div>
                                             <div class="course-content">
                                                 <div class="text-wrap border-bt-e6f3ff">
-                                                    <h6 class="title"><a href="#">Learn Python & Ethical Hacking</a></h6>
+                                                    <h6 class="title"><a href="#">Learn Python & Ethical Hacking</a>
+                                                    </h6>
                                                     <p class="teacher"><a href="#">Tom Steven</a></p>
-                                                    <p class="description">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
+                                                    <p class="description">Lorem Ipsum has been the industry’s standard
+                                                        dummy text ever since the 1500s.</p>
                                                 </div>
                                                 <div class="wrap-rating-price">
                                                     <div class="wrap-rating">
@@ -765,7 +610,8 @@
                                                 <div class="text-wrap border-bt-e6f3ff">
                                                     <h6 class="title"><a href="#">Advanced CSS Flexbox</a></h6>
                                                     <p class="teacher"><a href="#">Mark Henrey</a></p>
-                                                    <p class="description">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
+                                                    <p class="description">Lorem Ipsum has been the industry’s standard
+                                                        dummy text ever since the 1500s.</p>
                                                 </div>
                                                 <div class="wrap-rating-price">
                                                     <div class="wrap-rating">
@@ -789,7 +635,8 @@
                     </div>
                     <div class="tab-content">
                         <div class="item-content">
-                            <div class="flat-carousel" data-column="4" data-column2="2" data-loop="false"  data-column3="1" data-gap ="0" data-dots="false" data-nav="true">
+                            <div class="flat-carousel" data-column="4" data-column2="2" data-loop="false"
+                                 data-column3="1" data-gap="0" data-dots="false" data-nav="true">
                                 <div class="flat-courses clearfix owl-carousel">
                                     <div class="course  text-c100ea Leadership">
                                         <div class="course-border border-f-e6f3ff border-ra4 transition-vline">
@@ -802,9 +649,11 @@
                                             </div>
                                             <div class="course-content">
                                                 <div class="text-wrap border-bt-e6f3ff">
-                                                    <h6 class="title"><a href="#">Angular 6 - The Complete Guide</a></h6>
+                                                    <h6 class="title"><a href="#">Angular 6 - The Complete Guide</a>
+                                                    </h6>
                                                     <p class="teacher"><a href="#">Rosy Janner</a></p>
-                                                    <p class="description">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
+                                                    <p class="description">Lorem Ipsum has been the industry’s standard
+                                                        dummy text ever since the 1500s.</p>
                                                 </div>
                                                 <div class="wrap-rating-price">
                                                     <div class="wrap-rating">
@@ -835,7 +684,8 @@
                                                 <div class="text-wrap border-bt-e6f3ff">
                                                     <h6 class="title"><a href="#">Complete Java Masterclass</a></h6>
                                                     <p class="teacher"><a href="#">Tom Steven</a></p>
-                                                    <p class="description">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
+                                                    <p class="description">Lorem Ipsum has been the industry’s standard
+                                                        dummy text ever since the 1500s.</p>
                                                 </div>
                                                 <div class="wrap-rating-price">
                                                     <div class="wrap-rating">
@@ -866,7 +716,8 @@
                                                 <div class="text-wrap border-bt-e6f3ff">
                                                     <h6 class="title"><a href="#">React 16 - The Complete Guide</a></h6>
                                                     <p class="teacher"><a href="#">Mark Henrey</a></p>
-                                                    <p class="description">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
+                                                    <p class="description">Lorem Ipsum has been the industry’s standard
+                                                        dummy text ever since the 1500s.</p>
                                                 </div>
                                                 <div class="wrap-rating-price">
                                                     <div class="wrap-rating">
@@ -890,7 +741,8 @@
                     </div>
                     <div class="tab-content">
                         <div class="item-content">
-                            <div class="flat-carousel" data-column="4" data-column2="2" data-loop="false"  data-column3="1" data-gap ="0" data-dots="false" data-nav="true">
+                            <div class="flat-carousel" data-column="4" data-column2="2" data-loop="false"
+                                 data-column3="1" data-gap="0" data-dots="false" data-nav="true">
                                 <div class="flat-courses clearfix owl-carousel">
                                     <div class="course  text-c100ea Leadership">
                                         <div class="course-border border-f-e6f3ff border-ra4 transition-vline">
@@ -903,9 +755,11 @@
                                             </div>
                                             <div class="course-content">
                                                 <div class="text-wrap border-bt-e6f3ff">
-                                                    <h6 class="title"><a href="#">Angular 6 - The Complete Guide</a></h6>
+                                                    <h6 class="title"><a href="#">Angular 6 - The Complete Guide</a>
+                                                    </h6>
                                                     <p class="teacher"><a href="#">Rosy Janner</a></p>
-                                                    <p class="description">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
+                                                    <p class="description">Lorem Ipsum has been the industry’s standard
+                                                        dummy text ever since the 1500s.</p>
                                                 </div>
                                                 <div class="wrap-rating-price">
                                                     <div class="wrap-rating">
@@ -936,7 +790,8 @@
                                                 <div class="text-wrap border-bt-e6f3ff">
                                                     <h6 class="title"><a href="#">Complete Java Masterclass</a></h6>
                                                     <p class="teacher"><a href="#">Tom Steven</a></p>
-                                                    <p class="description">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
+                                                    <p class="description">Lorem Ipsum has been the industry’s standard
+                                                        dummy text ever since the 1500s.</p>
                                                 </div>
                                                 <div class="wrap-rating-price">
                                                     <div class="wrap-rating">
@@ -967,7 +822,8 @@
                                                 <div class="text-wrap border-bt-e6f3ff">
                                                     <h6 class="title"><a href="#">React 16 - The Complete Guide</a></h6>
                                                     <p class="teacher"><a href="#">Mark Henrey</a></p>
-                                                    <p class="description">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
+                                                    <p class="description">Lorem Ipsum has been the industry’s standard
+                                                        dummy text ever since the 1500s.</p>
                                                 </div>
                                                 <div class="wrap-rating-price">
                                                     <div class="wrap-rating">
@@ -998,7 +854,8 @@
                                                 <div class="text-wrap border-bt-e6f3ff">
                                                     <h6 class="title"><a href="#">Advanced CSS Flexbox</a></h6>
                                                     <p class="teacher"><a href="#">Mark Henrey</a></p>
-                                                    <p class="description">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
+                                                    <p class="description">Lorem Ipsum has been the industry’s standard
+                                                        dummy text ever since the 1500s.</p>
                                                 </div>
                                                 <div class="wrap-rating-price">
                                                     <div class="wrap-rating">
@@ -1023,7 +880,8 @@
                 </div>
             </div> <!-- /.flat-tabs -->
             <div class="wrap-btn flat-text-center">
-                <a href="#" class="flat-button btn-all-sourses font-Poppins font-weight-700 border-ra4">BROWSE ALL COURSES</a>
+                <a href="#" class="flat-button btn-all-sourses font-Poppins font-weight-700 border-ra4">BROWSE ALL
+                    COURSES</a>
             </div>
         </section> <!-- /.flat-popular-courses -->
 
@@ -1033,13 +891,16 @@
                     <div class="one-of-two">
                         <div class="textbox">
                             <h3 class="title">Study any topic, anytime. Explore thousands of courses $19.99</h3>
-                            <p class="text">Smply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 150 took a galley of type and scrambled it to make a type specimen book.</p>
+                            <p class="text">Smply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                                been the industry’s standard dummy text ever since the 150 took a galley of type and
+                                scrambled it to make a type specimen book.</p>
                             <h6 class="title">Here some of the techniques you will Learn:</h6>
-                            <p class="text">Lorem Ipsn gravida nibh vel velit auctor aliquet. Aenean sollicitudin elorem quis bibendum auci elit conseo.</p>
+                            <p class="text">Lorem Ipsn gravida nibh vel velit auctor aliquet. Aenean sollicitudin elorem
+                                quis bibendum auci elit conseo.</p>
                             <ul class="list-skill">
                                 <li> Hunting down seams with the Offset filter</li>
-                                <li>  Distorting an image with the Glass filter </li>
-                                <li>   Using blur and noise to focus attention, simulate motion, and more </li>
+                                <li> Distorting an image with the Glass filter</li>
+                                <li> Using blur and noise to focus attention, simulate motion, and more</li>
                             </ul>
                             <a href="#" class="btn-learning">BROWSE ALL LEARNING PATHS</a>
                         </div>
@@ -1049,7 +910,8 @@
                             <div class="bg-img">
                                 <div class="wrap-text">
                                     <p class="over font-Freestyle">Over </p>
-                                    <p class="wrap-over"><span class="count  font-Freestyle">20,640</span> <span class="free"> Free Tutorial</span></p>
+                                    <p class="wrap-over"><span class="count  font-Freestyle">20,640</span> <span
+                                                class="free"> Free Tutorial</span></p>
                                     <span class="end">Ends in 05h 23m 49s</span>
                                     <ul class="wrap-time-view list">
                                         <li class="time">6h 4m</li>
@@ -1117,11 +979,14 @@
                     </div> <!-- /.widget-categories -->
                     <div class="widget-subscribe flat-text-center">
                         <h4 class="widget-title ">Subscribe Newslatter </h4>
-                        <p class="text">Netus et malesuad fames ac tmgest blandi cursus risuar etiam non puam lacus. </p>
+                        <p class="text">Netus et malesuad fames ac tmgest blandi cursus risuar etiam non puam
+                            lacus. </p>
                         <p class="over font-Freestyle">Over </p>
-                        <p class="wrap-over"><span class="count  font-Freestyle">20,640</span> <span class="free"> Free Tutorial</span></p>
+                        <p class="wrap-over"><span class="count  font-Freestyle">20,640</span> <span class="free"> Free Tutorial</span>
+                        </p>
                         <div class="wrap-description">
-                            <p class="description">Develop in-demand skills with access to thousands of expert-led courses on business, tech and creative topics.</p>
+                            <p class="description">Develop in-demand skills with access to thousands of expert-led
+                                courses on business, tech and creative topics.</p>
                         </div>
                         <div class="wrap-form-subscribe">
                             <form>
@@ -1136,7 +1001,9 @@
                         <div class="taskbar">
                             <ul class="list">
                                 <li><span class="color-f3728b font-Poppins font-weight-700"> 1660</span>Courses</li>
-                                <li><span class="color-2ebd59 font-Poppins font-weight-700"> 32,060 </span>Video Tutorials</li>
+                                <li><span class="color-2ebd59 font-Poppins font-weight-700"> 32,060 </span>Video
+                                    Tutorials
+                                </li>
                             </ul>
                         </div>
                         <div class="select-order flat-text-right">
@@ -1163,7 +1030,9 @@
                                     <div class="text-wrap border-bt-e6f3ff">
                                         <h6 class="title"><a href="#">jQuery Mo bile for Beginners</a></h6>
                                         <p class="teacher"><a href="#">Ana Murphy</a></p>
-                                        <p class="description">Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit</p>
+                                        <p class="description">Lorem ipsum gravida nibh vel velit auctor aliquetnean
+                                            sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id
+                                            elit</p>
                                     </div>
                                     <div class="wrap-rating-price">
                                         <ul class="list meta-rate">
@@ -1205,7 +1074,9 @@
                                     <div class="text-wrap border-bt-e6f3ff">
                                         <h6 class="title"><a href="#">Complete Python Bootcamp</a></h6>
                                         <p class="teacher"><a href="#">Tom Steven</a></p>
-                                        <p class="description">Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit</p>
+                                        <p class="description">Lorem ipsum gravida nibh vel velit auctor aliquetnean
+                                            sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id
+                                            elit</p>
                                     </div>
                                     <div class="wrap-rating-price">
                                         <ul class="list meta-rate">
@@ -1247,7 +1118,9 @@
                                     <div class="text-wrap border-bt-e6f3ff">
                                         <h6 class="title"><a href="#">Complete Java Masterclass</a></h6>
                                         <p class="teacher"><a href="#">Ana Murphy</a></p>
-                                        <p class="description">Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit</p>
+                                        <p class="description">Lorem ipsum gravida nibh vel velit auctor aliquetnean
+                                            sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id
+                                            elit</p>
                                     </div>
                                     <div class="wrap-rating-price">
                                         <ul class="list meta-rate">
@@ -1289,7 +1162,9 @@
                                     <div class="text-wrap border-bt-e6f3ff">
                                         <h6 class="title"><a href="#">Learning Python Data Analysis</a></h6>
                                         <p class="teacher"><a href="#">Gilbert J. David</a></p>
-                                        <p class="description">Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit</p>
+                                        <p class="description">Lorem ipsum gravida nibh vel velit auctor aliquetnean
+                                            sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id
+                                            elit</p>
                                     </div>
                                     <div class="wrap-rating-price">
                                         <ul class="list meta-rate">
@@ -1331,7 +1206,9 @@
                                     <div class="text-wrap border-bt-e6f3ff">
                                         <h6 class="title"><a href="#">Angular 6 - The Complete Guide</a></h6>
                                         <p class="teacher"><a href="#">Charlotte H. Bronk</a></p>
-                                        <p class="description">Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit</p>
+                                        <p class="description">Lorem ipsum gravida nibh vel velit auctor aliquetnean
+                                            sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id
+                                            elit</p>
                                     </div>
                                     <div class="wrap-rating-price">
                                         <ul class="list meta-rate">
@@ -1373,7 +1250,9 @@
                                     <div class="text-wrap border-bt-e6f3ff">
                                         <h6 class="title"><a href="#">Learn Python & Ethical Hacking</a></h6>
                                         <p class="teacher"><a href="#">Erika P. Sera</a></p>
-                                        <p class="description">Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit</p>
+                                        <p class="description">Lorem ipsum gravida nibh vel velit auctor aliquetnean
+                                            sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id
+                                            elit</p>
                                     </div>
                                     <div class="wrap-rating-price">
                                         <ul class="list meta-rate">
@@ -1415,7 +1294,9 @@
                                     <div class="text-wrap border-bt-e6f3ff">
                                         <h6 class="title"><a href="#">Node.js Developer Course</a></h6>
                                         <p class="teacher"><a href="#">Michael R. Ryan</a></p>
-                                        <p class="description">Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit</p>
+                                        <p class="description">Lorem ipsum gravida nibh vel velit auctor aliquetnean
+                                            sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id
+                                            elit</p>
                                     </div>
                                     <div class="wrap-rating-price">
                                         <ul class="list meta-rate">

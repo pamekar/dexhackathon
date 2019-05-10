@@ -11,15 +11,10 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-Route::prefix('api')->group(function() {
+Route::get('/', 'HomeController@index');
 
-    Route::resource('/products', 'ProductController');
-    Route::resource('/user-profile', 'UserProfileController');
-
-});
+Route::resource('/products', 'ProductController');
+Route::resource('/user-profile', 'UserProfileController');
 
 // other routes
 

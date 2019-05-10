@@ -110,7 +110,8 @@
                                 </thead>
                                 <tbody>
                                 @foreach($dataTypeContent as $data)
-                                    @if(Auth::user()->role->id==1||($data->user_id == Auth::user()->id && Auth::user()->role->id==3)||($data->user_id == Auth::user()->id && Auth::user()->role->id==3))
+                                    @if(Auth::user()->role->id==1||($data->user_id == Auth::user()->id && Auth::user()->role->id==3)||($dataType->name=='transactions' && in_array($data->product_id,Auth::user()->product()->pluck('id')->all()) && Auth::user()->role->id==3))
+
                                         <tr>
                                             @can('delete',app($dataType->model_name))
                                                 <td>

@@ -1,0 +1,18 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+.grid-item {
+
+    padding: 10px;
+
+}
+
+h3 {
+    text-align: center;
+}

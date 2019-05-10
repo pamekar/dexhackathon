@@ -1,0 +1,45 @@
+.product-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 30px;
+}
+
+.double-grid {
+    margin: 20px;
+}
+
+.product-card {
+    width: 400px;
+}
+
+.product-card h4 {
+    font-size: 20px;
+    padding: 0 17px;
+
+}
+
+.product-card p {
+    font-size: 20px;
+    padding: 0 17px;
+
+}
+
+.quantity-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+}
+
+.buy-btn {
+    padding: 0px 17px;
+}
+
+.products-line {
+    width: 88%;
+    height: 47px;
+    margin-left: 100px;
+    border-bottom: 1px solid black;
+}

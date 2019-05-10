@@ -14,14 +14,13 @@ class CustomersTableSeeder extends Seeder
         //
         $faker = \Faker\Factory::create();
 
-        $role = \TCG\Voyager\Models\Role::where('name', 'farmer')
+        $role = \App\Role::where('name', 'user')
             ->firstOrFail();
-        $users = \App\User::where('role_id', $role)->pluck('id');
+        $users = \App\User::where('role_id', $role->id)->pluck('id');
 
         foreach ($users as $user) {
 
             \App\Customer::create([
-                'order'         => 1,
                 'user_id'       => $user,
                 'address'       => $faker->streetAddress,
                 'city'          => $faker->randomElement([

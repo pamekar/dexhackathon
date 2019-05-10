@@ -13,8 +13,8 @@ class ProductsTableSeeder extends Seeder
     public function run()
     {
         $faker = \Faker\Factory::create();
-        $role = Role::where('name', 'farmer')->firstOrFail();
-        $users = \App\User::where('role_id', $role)->get();
+        $role = \App\Role::where('name', 'farmer')->firstOrFail();
+        $users = \App\User::where('role_id', $role->id)->get();
         $categories = \App\Category::pluck('id');
         foreach ($users as $user) {
             foreach (range(1, 10 + mt_rand(0, 10)) as $index) {

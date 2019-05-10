@@ -16,10 +16,10 @@ class CategoriesTableSeeder extends Seeder
         $faker = \Faker\Factory::create();
         $categories = [
             'Tuber crops',
-            'spices',
-            'fruits',
-            'vegetables',
-            'ornamental plants',
+            'Spices',
+            'Fruits',
+            'Vegetables',
+            'Ornamental plants',
             'Grains'
         ];
         foreach ($categories as $category) {

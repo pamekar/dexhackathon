@@ -34,7 +34,8 @@ class UsersTableSeeder extends Seeder
                 'role_id'  => $role->id,
                 'name'     => "$faker->firstName $faker->lastName",
                 'email'    => $faker->email,
-                'password' => bcrypt('password')
+                'password' => bcrypt('password'),
+                'location'=>$faker->randomElement(['vilnius','kanuas','palanga','telsiai'])
             ]);
         }
 
@@ -45,7 +46,8 @@ class UsersTableSeeder extends Seeder
                 'role_id'  => $role->id,
                 'name'     => "$faker->firstName $faker->lastName",
                 'email'    => $faker->email,
-                'password' => bcrypt('password')
+                'password' => bcrypt('password'),
+                'location'=>$faker->randomElement(['vilnius','kanuas','palanga','telsiai'])
             ]);
         }
     }

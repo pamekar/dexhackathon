@@ -19,7 +19,8 @@ class CreateTransactionsTable extends Migration
             $table->unsignedBigInteger('product_id');
             $table->integer('quantity');
             $table->integer('amount');
-            $table->enum('status',['paid','pending']);
+            $table->enum('remark', ['paid', 'pending']);
+            $table->enum('status', ['delivered', 'ordered']);
             $table->timestamps();
         });
     }

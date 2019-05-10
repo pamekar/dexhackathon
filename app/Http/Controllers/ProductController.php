@@ -35,10 +35,28 @@ class ProductController extends Controller
         }
 
         // return product lists
-        $products = Product::all();
+        // $products = Product::all();
+        $products = Product::limit(4)->get();
         // $products = Product::find(1);
 
-        return $products;
+        // return $products;
+        $product_array =  array();
+
+        foreach ($products as $product)
+        {
+            $product_list = [
+                'prooduct_id' => $product->id,
+                'product_name' => $product->product_name,
+                // 'farmer_rating' => mt_rand(1, 5),
+                'amount' => $product->amount,
+                'category' => $product->category->name,
+                'product_image' => url('/images/product.jpg')
+            ];
+
+            array_push($product_array, $product_list);
+        }
+
+        return response()->json($product_array);
 
     }
 
@@ -60,7 +78,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        
+
     }
 
     /**
@@ -72,6 +90,18 @@ class ProductController extends Controller
     public function show($id)
     {
         //
+        $product = Product::find($id);
+
+        $product_list = [
+            'prooduct_id' => $product->id,
+            'product_name' => $product->product_name,
+            'farmer_rating' => mt_rand(1, 5),
+            'amount' => $product->amount,
+            'category' => $product->category->name,
+            'product_image' => url('/images/product.jpeg')
+        ];
+
+        return response()->json($product_list);
     }
 
     /**
@@ -95,6 +125,21 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $product = Product::find($id);
+        $product->product_name = $request->product_name;
+        $product->amount = $request->amount;
+        $product->save();
+
+        $product_list = [
+            'prooduct_id' => $product->id,
+            'product_name' => $product->product_name,
+            'farmer_rating' => mt_rand(1, 5),
+            'amount' => $product->amount,
+            'category' => $product->category->name,
+            'product_image' => url('/images/product.jpeg')
+        ];
+
+        return response()->json($product_list);
     }
 
     /**
@@ -105,7 +150,10 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::find($id);
+        $product->delete();
+
+        return 'Deleted Successfully';
     }
 
     /**

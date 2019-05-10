@@ -53,6 +53,10 @@ class UserProfileController extends Controller
         //
         $customer = new Customer;
         $customer->user_id = auth()->user()->id;
+        $customer->address = $request->address;
+        $customer->city = $request->city;
+        $customer->health_issues = $request->health_issues;
+        $customer->save();
     }
 
     /**
@@ -63,7 +67,7 @@ class UserProfileController extends Controller
      */
     public function show($id)
     {
-        //
+        // find
     }
 
     /**
@@ -86,7 +90,12 @@ class UserProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //save the update
+        $customer = Customer::find($id);
+        $customer->address = $request->address;
+        $customer->city = $request->city;
+        $customer->health_issues = $request->health_issues;
+        $customer->save();
     }
 
     /**

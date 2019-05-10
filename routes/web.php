@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('/products', 'ProductController');
+Route::resource('/user-profile', 'UserProfileController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

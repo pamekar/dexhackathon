@@ -77,3 +77,5 @@ $ php artisan voyager:admin your@email.com --create
 ```
 
 And you will be prompted for the user's name and password.
+
+NOTE: `$ php artisan migrate:refresh` should be used when necessary, and for every of such command. run `$ php artisan voyager:install`

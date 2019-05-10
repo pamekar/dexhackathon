@@ -11,12 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::prefix('api')->group(function() {
+
+    Route::resource('/products', 'ProductController');
+    Route::resource('/user-profile', 'UserProfileController');
+
 });
 
-Route::resource('/products', 'ProductController');
-Route::resource('/user-profile', 'UserProfileController');
+// other routes
 
 Auth::routes();
 
@@ -26,3 +31,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+

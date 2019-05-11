@@ -17,9 +17,11 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-
+        if (!$request->wantsJson()) {
+            return view('products');
+        }
         // check location for logged in user
         if (Auth::check()) {
             //get user_id & user
@@ -34,13 +36,45 @@ class ProductController extends Controller
             $location = $this->checkLocation();
         }
 
-        // return product lists
-        // $products = Product::all();
-        $products = Product::inRandomOrder()->limit(8)->get();
-        // $products = Product::find(1);
+        $products = Product::inRandomOrder()->paginate(8);
 
-        return view('');
+        return response()->json($products);
 
+    }
+
+    public function searchProducts(Request $request)
+    {
+        if (!$request->wantsJson()) {
+            return view('products');
+        }
+
+        $search = explode(',', $request->input('q', []));
+        $count = $request->input('count', 12);
+        $category = $request->input('category', null);
+        $location = $request->input('location', null);
+
+        $products = Product::where('published', 1)->where(function ($query) use
+        (
+            $search
+        ) {
+            foreach ($search as $item) {
+                $query->where('product_name', 'like', "%$item%");
+            }
+        })->where(function ($query) use ($category) {
+            if ($category) {
+                $query->where('category_id', $category);
+            }
+        })->where(function ($query) use ($location) {
+            if ($location) {
+                $query->where('location', $location);
+            }
+        })
+            ->paginate($count);
+
+        return response()->json([
+            'products' => $products,
+            'search'   => $request->input('q', [])
+        ]);
     }
 
     /**
@@ -74,19 +108,9 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
         $product = Product::find($id);
 
-        $product_list = [
-            'prooduct_id'   => $product->id,
-            'product_name'  => $product->product_name,
-            'farmer_rating' => mt_rand(1, 5),
-            'amount'        => $product->amount,
-            'category'      => $product->category->name,
-            'product_image' => url('/images/product.jpeg')
-        ];
-
-        return response()->json($product_list);
+        return view('product', compact('product'));
     }
 
     /**
@@ -118,7 +142,7 @@ class ProductController extends Controller
         $product->save();
 
         $product_list = [
-            'prooduct_id'   => $product->id,
+            'product_id'    => $product->id,
             'product_name'  => $product->product_name,
             'farmer_rating' => mt_rand(1, 5),
             'amount'        => $product->amount,

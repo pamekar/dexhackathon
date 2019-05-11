@@ -15,35 +15,13 @@
                     <li><a href="#">Courses</a></li>
                 </ul>
             </div>
-            <img src="png/bg-white.png" alt="bookflare" class="bg-breadcrumbs">
+            <img src="/png/bg-white.png" alt="bookflare" class="bg-breadcrumbs">
         </div>
     </section> <!-- /.flat-title-page -->
 
     <div class="content-wrap  courses-grid-v3-page">
         <section class="flat-popular-courses">
             <div class="flat-tabs  style3 ">
-                <ul class="tab-title clearfix style3 pd-left-15">
-                    <li class="item-title  ">
-                        <span class="inner">NEW RELEASES</span>
-                    </li>
-                    <li class="item-title ">
-                        <span class="inner">ART & DESIGN </span>
-                    </li>
-                    <li class="item-title ">
-                        <span class="inner">BUSINESS </span>
-                    </li>
-                    <li class="item-title ">
-                        <span class="inner">IT & SOFTWARE</span>
-                    </li>
-
-                    <li class="item-title ">
-                        <span class="inner">PORGRAMMING LANGUAGES </span>
-                    </li>
-
-                    <li class="item-title ">
-                        <span class="inner">WEEKLY SERIES </span>
-                    </li>
-                </ul>
                 <div class="tab-content-wrap">
                     <div class="tab-content">
                         <div class="item-content">
@@ -54,7 +32,7 @@
                                         <div class="course  text-2ebd59  Leadership">
                                             <div class="course-border border-f-e6f3ff border-ra4 transition-vline">
                                                 <div class="course-img img-vline">
-                                                    <a href="#"><img src="png/courses-gird-v1-6.png"
+                                                    <a href="#"><img src="/png/courses-gird-v1-6.png"
                                                                      alt="bookflare"></a>
                                                     <div class="overlay">
                                                         <span class="vline"></span>
@@ -63,10 +41,11 @@
                                                 </div>
                                                 <div class="course-content">
                                                     <div class="text-wrap border-bt-e6f3ff">
-                                                        <h6 class="title"><a href="#">{{$product->product_name}}</a>
+                                                        <h6 class="title"><a
+                                                                    href="{{url("products/$product->id")}}">{{$product->product_name}}</a>
                                                         </h6>
-                                                        <p class="teacher"><a href="#">{{$product->user->name}}</a></p>
-                                                        <p class="description">{{$faker->paragraph}}</p>
+                                                        <p class="teacher"><a href="#">{{$product->farmer}}</a></p>
+                                                        <p class="description">{{$faker->text(50)}}</p>
                                                     </div>
                                                     <div class="wrap-rating-price">
                                                         <div class="wrap-rating">
@@ -97,7 +76,7 @@
                                     <div class="course  text-c100ea Leadership">
                                         <div class="course-border border-f-e6f3ff border-ra4 transition-vline">
                                             <div class="course-img img-vline">
-                                                <a href="#"><img src="png/courses-gird-v1-6.png" alt="bookflare"></a>
+                                                <a href="#"><img src="/png/courses-gird-v1-6.png" alt="bookflare"></a>
                                                 <div class="overlay">
                                                     <span class="vline"></span>
                                                     <span class="vline vline-bottom"></span>
@@ -130,7 +109,7 @@
                                     <div class="course  text-ea0042 Design">
                                         <div class="course-border border-f-e6f3ff border-ra4 transition-vline">
                                             <div class="course-img img-vline">
-                                                <a href="#"><img src="png/courses-gird-v1-7.png" alt="bookflare"></a>
+                                                <a href="#"><img src="/png/courses-gird-v1-7.png" alt="bookflare"></a>
                                                 <div class="overlay">
                                                     <span class="vline"></span>
                                                     <span class="vline vline-bottom"></span>
@@ -162,7 +141,7 @@
                                     <div class="course  text-2ebd59 Leadership">
                                         <div class="course-border border-f-e6f3ff border-ra4 transition-vline">
                                             <div class="course-img img-vline">
-                                                <a href="#"><img src="png/courses-gird-v1-8.png" alt="bookflare"></a>
+                                                <a href="#"><img src="/png/courses-gird-v1-8.png" alt="bookflare"></a>
                                                 <div class="overlay">
                                                     <span class="vline"></span>
                                                     <span class="vline vline-bottom"></span>
@@ -194,7 +173,7 @@
                                     <div class="course  text-2ebd59 Design">
                                         <div class="course-border border-f-e6f3ff border-ra4 transition-vline">
                                             <div class="course-img img-vline">
-                                                <a href="#"><img src="png/courses-gird-v1-9.png" alt="bookflare"></a>
+                                                <a href="#"><img src="/png/courses-gird-v1-9.png" alt="bookflare"></a>
                                                 <div class="overlay">
                                                     <span class="vline"></span>
                                                     <span class="vline vline-bottom"></span>
@@ -226,7 +205,7 @@
                                     <div class="course  text-ea0042 Leadership Photography">
                                         <div class="course-border border-f-e6f3ff border-ra4 transition-vline">
                                             <div class="course-img img-vline">
-                                                <a href="#"><img src="png/courses-gird-v1-10.png" alt="bookflare"></a>
+                                                <a href="#"><img src="/png/courses-gird-v1-10.png" alt="bookflare"></a>
                                                 <div class="overlay">
                                                     <span class="vline"></span>
                                                     <span class="vline vline-bottom"></span>
@@ -258,7 +237,7 @@
                                     <div class="course   text-c100ea Business Leadership Photography">
                                         <div class="course-border border-f-e6f3ff border-ra4 transition-vline">
                                             <div class="course-img img-vline">
-                                                <a href="#"><img src="png/courses-gird-v1-11.png" alt="bookflare"></a>
+                                                <a href="#"><img src="/png/courses-gird-v1-11.png" alt="bookflare"></a>
                                                 <div class="overlay">
                                                     <span class="vline"></span>
                                                     <span class="vline vline-bottom"></span>
@@ -291,7 +270,7 @@
                                     <div class="course  text-256cff Photography">
                                         <div class="course-border border-f-e6f3ff border-ra4 transition-vline">
                                             <div class="course-img img-vline">
-                                                <a href="#"><img src="png/courses-gird-v1-12.png" alt="bookflare"></a>
+                                                <a href="#"><img src="/png/courses-gird-v1-12.png" alt="bookflare"></a>
                                                 <div class="overlay">
                                                     <span class="vline"></span>
                                                     <span class="vline vline-bottom"></span>
@@ -332,7 +311,7 @@
                                     <div class="course  text-c100ea Leadership">
                                         <div class="course-border border-f-e6f3ff border-ra4 transition-vline">
                                             <div class="course-img img-vline">
-                                                <a href="#"><img src="png/courses-gird-v1-6.png" alt="bookflare"></a>
+                                                <a href="#"><img src="/png/courses-gird-v1-6.png" alt="bookflare"></a>
                                                 <div class="overlay">
                                                     <span class="vline"></span>
                                                     <span class="vline vline-bottom"></span>
@@ -365,7 +344,7 @@
                                     <div class="course  text-ea0042 Design">
                                         <div class="course-border border-f-e6f3ff border-ra4 transition-vline">
                                             <div class="course-img img-vline">
-                                                <a href="#"><img src="png/courses-gird-v1-7.png" alt="bookflare"></a>
+                                                <a href="#"><img src="/png/courses-gird-v1-7.png" alt="bookflare"></a>
                                                 <div class="overlay">
                                                     <span class="vline"></span>
                                                     <span class="vline vline-bottom"></span>
@@ -397,7 +376,7 @@
                                     <div class="course  text-2ebd59 Leadership">
                                         <div class="course-border border-f-e6f3ff border-ra4 transition-vline">
                                             <div class="course-img img-vline">
-                                                <a href="#"><img src="png/courses-gird-v1-8.png" alt="bookflare"></a>
+                                                <a href="#"><img src="/png/courses-gird-v1-8.png" alt="bookflare"></a>
                                                 <div class="overlay">
                                                     <span class="vline"></span>
                                                     <span class="vline vline-bottom"></span>
@@ -429,7 +408,7 @@
                                     <div class="course  text-2ebd59 Design">
                                         <div class="course-border border-f-e6f3ff border-ra4 transition-vline">
                                             <div class="course-img img-vline">
-                                                <a href="#"><img src="png/courses-gird-v1-9.png" alt="bookflare"></a>
+                                                <a href="#"><img src="/png/courses-gird-v1-9.png" alt="bookflare"></a>
                                                 <div class="overlay">
                                                     <span class="vline"></span>
                                                     <span class="vline vline-bottom"></span>
@@ -470,7 +449,7 @@
                                     <div class="course  text-c100ea Leadership">
                                         <div class="course-border border-f-e6f3ff border-ra4 transition-vline">
                                             <div class="course-img img-vline">
-                                                <a href="#"><img src="png/courses-gird-v1-6.png" alt="bookflare"></a>
+                                                <a href="#"><img src="/png/courses-gird-v1-6.png" alt="bookflare"></a>
                                                 <div class="overlay">
                                                     <span class="vline"></span>
                                                     <span class="vline vline-bottom"></span>
@@ -503,7 +482,7 @@
                                     <div class="course  text-ea0042 Design">
                                         <div class="course-border border-f-e6f3ff border-ra4 transition-vline">
                                             <div class="course-img img-vline">
-                                                <a href="#"><img src="png/courses-gird-v1-7.png" alt="bookflare"></a>
+                                                <a href="#"><img src="/png/courses-gird-v1-7.png" alt="bookflare"></a>
                                                 <div class="overlay">
                                                     <span class="vline"></span>
                                                     <span class="vline vline-bottom"></span>
@@ -535,7 +514,7 @@
                                     <div class="course  text-ea0042 Leadership Photography">
                                         <div class="course-border border-f-e6f3ff border-ra4 transition-vline">
                                             <div class="course-img img-vline">
-                                                <a href="#"><img src="png/courses-gird-v1-10.png" alt="bookflare"></a>
+                                                <a href="#"><img src="/png/courses-gird-v1-10.png" alt="bookflare"></a>
                                                 <div class="overlay">
                                                     <span class="vline"></span>
                                                     <span class="vline vline-bottom"></span>
@@ -567,7 +546,7 @@
                                     <div class="course   text-c100ea Business Leadership Photography">
                                         <div class="course-border border-f-e6f3ff border-ra4 transition-vline">
                                             <div class="course-img img-vline">
-                                                <a href="#"><img src="png/courses-gird-v1-11.png" alt="bookflare"></a>
+                                                <a href="#"><img src="/png/courses-gird-v1-11.png" alt="bookflare"></a>
                                                 <div class="overlay">
                                                     <span class="vline"></span>
                                                     <span class="vline vline-bottom"></span>
@@ -600,7 +579,7 @@
                                     <div class="course  text-256cff Photography">
                                         <div class="course-border border-f-e6f3ff border-ra4 transition-vline">
                                             <div class="course-img img-vline">
-                                                <a href="#"><img src="png/courses-gird-v1-12.png" alt="bookflare"></a>
+                                                <a href="#"><img src="/png/courses-gird-v1-12.png" alt="bookflare"></a>
                                                 <div class="overlay">
                                                     <span class="vline"></span>
                                                     <span class="vline vline-bottom"></span>
@@ -641,7 +620,7 @@
                                     <div class="course  text-c100ea Leadership">
                                         <div class="course-border border-f-e6f3ff border-ra4 transition-vline">
                                             <div class="course-img img-vline">
-                                                <a href="#"><img src="png/courses-gird-v1-6.png" alt="bookflare"></a>
+                                                <a href="#"><img src="/png/courses-gird-v1-6.png" alt="bookflare"></a>
                                                 <div class="overlay">
                                                     <span class="vline"></span>
                                                     <span class="vline vline-bottom"></span>
@@ -674,7 +653,7 @@
                                     <div class="course  text-ea0042 Design">
                                         <div class="course-border border-f-e6f3ff border-ra4 transition-vline">
                                             <div class="course-img img-vline">
-                                                <a href="#"><img src="png/courses-gird-v1-7.png" alt="bookflare"></a>
+                                                <a href="#"><img src="/png/courses-gird-v1-7.png" alt="bookflare"></a>
                                                 <div class="overlay">
                                                     <span class="vline"></span>
                                                     <span class="vline vline-bottom"></span>
@@ -706,7 +685,7 @@
                                     <div class="course  text-2ebd59 Leadership">
                                         <div class="course-border border-f-e6f3ff border-ra4 transition-vline">
                                             <div class="course-img img-vline">
-                                                <a href="#"><img src="png/courses-gird-v1-8.png" alt="bookflare"></a>
+                                                <a href="#"><img src="/png/courses-gird-v1-8.png" alt="bookflare"></a>
                                                 <div class="overlay">
                                                     <span class="vline"></span>
                                                     <span class="vline vline-bottom"></span>
@@ -747,7 +726,7 @@
                                     <div class="course  text-c100ea Leadership">
                                         <div class="course-border border-f-e6f3ff border-ra4 transition-vline">
                                             <div class="course-img img-vline">
-                                                <a href="#"><img src="png/courses-gird-v1-6.png" alt="bookflare"></a>
+                                                <a href="#"><img src="/png/courses-gird-v1-6.png" alt="bookflare"></a>
                                                 <div class="overlay">
                                                     <span class="vline"></span>
                                                     <span class="vline vline-bottom"></span>
@@ -780,7 +759,7 @@
                                     <div class="course  text-ea0042 Design">
                                         <div class="course-border border-f-e6f3ff border-ra4 transition-vline">
                                             <div class="course-img img-vline">
-                                                <a href="#"><img src="png/courses-gird-v1-7.png" alt="bookflare"></a>
+                                                <a href="#"><img src="/png/courses-gird-v1-7.png" alt="bookflare"></a>
                                                 <div class="overlay">
                                                     <span class="vline"></span>
                                                     <span class="vline vline-bottom"></span>
@@ -812,7 +791,7 @@
                                     <div class="course  text-2ebd59 Leadership">
                                         <div class="course-border border-f-e6f3ff border-ra4 transition-vline">
                                             <div class="course-img img-vline">
-                                                <a href="#"><img src="png/courses-gird-v1-8.png" alt="bookflare"></a>
+                                                <a href="#"><img src="/png/courses-gird-v1-8.png" alt="bookflare"></a>
                                                 <div class="overlay">
                                                     <span class="vline"></span>
                                                     <span class="vline vline-bottom"></span>
@@ -844,7 +823,7 @@
                                     <div class="course  text-256cff Photography">
                                         <div class="course-border border-f-e6f3ff border-ra4 transition-vline">
                                             <div class="course-img img-vline">
-                                                <a href="#"><img src="png/courses-gird-v1-12.png" alt="bookflare"></a>
+                                                <a href="#"><img src="/png/courses-gird-v1-12.png" alt="bookflare"></a>
                                                 <div class="overlay">
                                                     <span class="vline"></span>
                                                     <span class="vline vline-bottom"></span>
@@ -881,7 +860,7 @@
             </div> <!-- /.flat-tabs -->
             <div class="wrap-btn flat-text-center">
                 <a href="#" class="flat-button btn-all-sourses font-Poppins font-weight-700 border-ra4">BROWSE ALL
-                    COURSES</a>
+                    FarmFresh</a>
             </div>
         </section> <!-- /.flat-popular-courses -->
 
@@ -1019,7 +998,7 @@
                             <div class="course-border border-f-e6f3ff border-ra4 clear-sub-columns transition-vline">
                                 <div class="course-img-box">
                                     <div class="course-img img-vline">
-                                        <a href="#"><img src="png/courses-gird-v3-1.png" alt="bookflare"></a>
+                                        <a href="#"><img src="/png/courses-gird-v3-1.png" alt="bookflare"></a>
                                         <div class="overlay">
                                             <span class="vline"></span>
                                             <span class="vline vline-bottom"></span>
@@ -1063,7 +1042,7 @@
                             <div class="course-border border-f-e6f3ff border-ra4 clear-sub-columns transition-vline">
                                 <div class="course-img-box">
                                     <div class="course-img img-vline">
-                                        <a href="#"><img src="png/courses-gird-v3-2.png" alt="bookflare"></a>
+                                        <a href="#"><img src="/png/courses-gird-v3-2.png" alt="bookflare"></a>
                                         <div class="overlay">
                                             <span class="vline"></span>
                                             <span class="vline vline-bottom"></span>
@@ -1107,7 +1086,7 @@
                             <div class="course-border border-f-e6f3ff border-ra4 clear-sub-columns transition-vline">
                                 <div class="course-img-box">
                                     <div class="course-img img-vline">
-                                        <a href="#"><img src="png/courses-gird-v3-3.png" alt="bookflare"></a>
+                                        <a href="#"><img src="/png/courses-gird-v3-3.png" alt="bookflare"></a>
                                         <div class="overlay">
                                             <span class="vline"></span>
                                             <span class="vline vline-bottom"></span>
@@ -1151,7 +1130,7 @@
                             <div class="course-border border-f-e6f3ff border-ra4 clear-sub-columns transition-vline">
                                 <div class="course-img-box">
                                     <div class="course-img img-vline">
-                                        <a href="#"><img src="png/courses-gird-v3-4.png" alt="bookflare"></a>
+                                        <a href="#"><img src="/png/courses-gird-v3-4.png" alt="bookflare"></a>
                                         <div class="overlay">
                                             <span class="vline"></span>
                                             <span class="vline vline-bottom"></span>
@@ -1195,7 +1174,7 @@
                             <div class="course-border border-f-e6f3ff border-ra4 clear-sub-columns transition-vline">
                                 <div class="course-img-box">
                                     <div class="course-img img-vline">
-                                        <a href="#"><img src="png/courses-gird-v3-5.png" alt="bookflare"></a>
+                                        <a href="#"><img src="/png/courses-gird-v3-5.png" alt="bookflare"></a>
                                         <div class="overlay">
                                             <span class="vline"></span>
                                             <span class="vline vline-bottom"></span>
@@ -1239,7 +1218,7 @@
                             <div class="course-border border-f-e6f3ff border-ra4 clear-sub-columns transition-vline">
                                 <div class="course-img-box">
                                     <div class="course-img img-vline">
-                                        <a href="#"><img src="png/courses-gird-v3-6.png" alt="bookflare"></a>
+                                        <a href="#"><img src="/png/courses-gird-v3-6.png" alt="bookflare"></a>
                                         <div class="overlay">
                                             <span class="vline"></span>
                                             <span class="vline vline-bottom"></span>
@@ -1283,7 +1262,7 @@
                             <div class="course-border border-f-e6f3ff border-ra4 clear-sub-columns transition-vline">
                                 <div class="course-img-box">
                                     <div class="course-img img-vline">
-                                        <a href="#"><img src="png/courses-gird-v3-7.png" alt="bookflare"></a>
+                                        <a href="#"><img src="/png/courses-gird-v3-7.png" alt="bookflare"></a>
                                         <div class="overlay">
                                             <span class="vline"></span>
                                             <span class="vline vline-bottom"></span>

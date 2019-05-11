@@ -1,24 +1,23 @@
-@extends('layouts.user_dash')
+@extends('layouts.app')
 
 @section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Dashboard</div>
 
-    <!-- start with the real content -->
-    <div id="real">
-      <!-- start content here -->
-      <div id="Profile">
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
 
-        <div class="wrap card">
-        	<section class="app-content">
-
-        		<div class="row">
-
-        		</div><!-- .row -->
-        	</section><!-- #dash-content -->
-        </div><!-- .row -->
-
-      </div>
-      <!-- end content -->
+                    You are logged in!
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- end the real content -->
-
+</div>
 @endsection

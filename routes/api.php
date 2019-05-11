@@ -18,10 +18,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('home/products', 'ProductController@index');
+
 Route::group([
 
     'middleware' => 'api',
-    'prefix' => 'auth'
+    'prefix'     => 'auth'
 
 ], function ($router) {
     Route::post('login', 'AuthController@login');

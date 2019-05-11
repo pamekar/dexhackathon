@@ -20,10 +20,7 @@ Route::resource('/user-profile', 'UserProfileController');
 
 Auth::routes();
 
-Route::get('/home', 'UserController@index')->name('user.dashboard');
-Route::get('/home/profile', 'ProfileController@index')->name('user.profile');
-Route::get('home/transaction', 'TransactionController@index')->name('user.transaction');
-Route::get('/home/invoice/{orderref}', 'TransactionController@invoice')->name('user.invoice');
+Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::group(['prefix' => 'admin'], function () {

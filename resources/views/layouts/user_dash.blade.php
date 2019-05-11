@@ -41,6 +41,7 @@
         <li class="nav-item"><a href="{{ route('user.dashboard') }}" class="nav-link {{ Request::is('home') ? 'active' : '' }}" ><i class="fa fa-adjust"></i>Dashboard</a></li>
         <li class="nav-item"><a href="{{ route('user.plan') }}" class="nav-link {{ Request::is('home/plan') ? 'active' : '' }}"><i class="fa fa-life-ring"></i>Food Plans</a></li>
         <li class="nav-item"><a href="{{ route('user.transaction') }}" class="nav-link {{ Request::is('home/transactions') ? 'active' : '' }}"><i class="fa fa-table"></i>Transactions</a></li>
+            <li class="nav-item"><a href="/products" class="nav-link"><i class="fa fa-table"></i>Buy Products</a></li>
         <li class="nav-item"><a href="{{ route('user.profile') }}" class="nav-link {{ Request::is('home/profile') ? 'active' : '' }}"><i class="fa fa-users"></i>profile</a></li>
         {{-- <li class="nav-item"><a href="{{ route('user.support') }}" class="nav-link {{ Request::is('home/support') ? 'active' : '' }}"><i class="fa fa-life-ring"></i>support</a></li> --}}
         <li class="nav-item">

@@ -749,6 +749,7 @@ process.umask = function() { return 0; };
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -14418,112 +14419,121 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "content-wrap  courses-grid-v1-page" }, [
-    _c("div", { staticClass: "container-fluid" }, [
-      _c("div", { staticClass: "content-page-wrap" }, [
-        _c(
-          "div",
-          { staticClass: "flat-courses clearfix isotope-courses" },
-          _vm._l(_vm.products, function(product) {
-            return _c(
-              "div",
-              { class: "course one-of-four text-" + _vm.color(_vm.colors) },
-              [
-                _c(
-                  "div",
-                  {
-                    staticClass:
-                      "course-border border-f-e6f3ff border-ra4 transition-vline"
-                  },
-                  [
-                    _c("div", { staticClass: "course-img img-vline" }, [
-                      _c("a", { attrs: { href: "/product/" + product.slug } }, [
-                        _c("img", {
-                          attrs: {
-                            src: product.product_image_preview,
-                            alt: "bookflare"
-                          }
-                        })
-                      ]),
-                      _vm._v(" "),
-                      _vm._m(0, true)
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "course-content" }, [
-                      _c("div", { staticClass: "text-wrap border-bt-e6f3ff" }, [
-                        _c("h6", { staticClass: "title" }, [
-                          _c(
-                            "a",
-                            { attrs: { href: "/product/" + product.slug } },
-                            [_vm._v(_vm._s(product.product_name))]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "teacher" }, [
-                          _c("a", { attrs: { href: "#" } }, [
-                            _vm._v(_vm._s(product.farmer))
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "description" }, [
-                          _vm._v(_vm._s(product.summary))
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "wrap-rating-price" }, [
+  return _c("div", [
+    _c("div", { staticClass: "content-wrap  courses-grid-v1-page" }, [
+      _c("div", { staticClass: "container-fluid" }, [
+        _c("div", { staticClass: "content-page-wrap" }, [
+          _c(
+            "div",
+            { staticClass: "flat-courses clearfix isotope-courses" },
+            _vm._l(_vm.products, function(product) {
+              return _c(
+                "div",
+                { class: "course one-of-four text-" + _vm.color(_vm.colors) },
+                [
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "course-border border-f-e6f3ff border-ra4 transition-vline"
+                    },
+                    [
+                      _c("div", { staticClass: "course-img img-vline" }, [
                         _c(
-                          "div",
-                          { staticClass: "wrap-rating" },
+                          "a",
+                          { attrs: { href: "/products/" + product.id } },
                           [
-                            _c("star-rating", {
+                            _c("img", {
                               attrs: {
-                                rating: Number(product.rating.split(";")[0]),
-                                increment: 0.01,
-                                "read-only": true,
-                                "star-size": 13,
-                                "show-rating": false
+                                src: product.product_image,
+                                alt: "bookflare"
                               }
-                            }),
-                            _vm._v(" "),
-                            _c("span", [
-                              _vm._v(
-                                _vm._s(Number(product.rating.split(";")[0])) +
-                                  "\n                                            (" +
-                                  _vm._s(Number(product.rating.split(";")[1])) +
-                                  ")"
-                              )
-                            ])
-                          ],
-                          1
+                            })
+                          ]
                         ),
                         _vm._v(" "),
-                        _c("span", { staticClass: "price" }, [
-                          _vm._v(
-                            "€" +
-                              _vm._s(
-                                product.amount.toLocaleString("en", {
-                                  maximumSignificantDigits: 2
-                                })
+                        _vm._m(0, true)
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "course-content" }, [
+                        _c(
+                          "div",
+                          { staticClass: "text-wrap border-bt-e6f3ff" },
+                          [
+                            _c("h6", { staticClass: "title" }, [
+                              _c(
+                                "a",
+                                { attrs: { href: "/products/" + product.id } },
+                                [_vm._v(_vm._s(product.product_name))]
                               )
-                          )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "teacher" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _vm._v(_vm._s(product.farmer))
+                              ])
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "wrap-rating-price" }, [
+                          _c(
+                            "div",
+                            { staticClass: "wrap-rating" },
+                            [
+                              _c("star-rating", {
+                                attrs: {
+                                  rating: Number(product.rating.split(";")[0]),
+                                  increment: 0.01,
+                                  "read-only": true,
+                                  "star-size": 13,
+                                  "show-rating": false
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("span", [
+                                _vm._v(
+                                  _vm._s(Number(product.rating.split(";")[0])) +
+                                    "\n                                            (" +
+                                    _vm._s(
+                                      Number(product.rating.split(";")[1])
+                                    ) +
+                                    ")"
+                                )
+                              ])
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "price" }, [
+                            _vm._v(
+                              "€" +
+                                _vm._s(
+                                  product.amount.toLocaleString("en", {
+                                    maximumSignificantDigits: 2
+                                  })
+                                )
+                            )
+                          ])
                         ])
                       ])
-                    ])
-                  ]
-                )
-              ]
-            )
-          }),
-          0
-        )
+                    ]
+                  )
+                ]
+              )
+            }),
+            0
+          )
+        ])
       ])
     ]),
     _vm._v(" "),
-    _c("br"),
-    _vm._v(" "),
     _c(
       "div",
-      { staticClass: "flat-paginations style2" },
+      {
+        staticClass: "flat-paginations style2 block text-center",
+        staticStyle: { "padding-bottom": "30px" }
+      },
       [
         _c("paginate", {
           attrs: {

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PaymentsController extends Controller
 {
@@ -30,5 +31,10 @@ class PaymentsController extends Controller
     public function addToCart($id)
     {
         Cart::create(['product_id' => $id, 'status' => 'pending']);
+    }
+
+    public function success()
+    {
+        return view('payment-success');
     }
 }

@@ -1,28 +1,5 @@
 $(function () {
     "use strict";
-
-    var myChart = Highcharts.chart('chart', {
-        chart: {
-            type: 'areaspline'
-        },
-        title: {
-            text: ''
-        },
-        xAxis: {
-            // categories: ['1', '2', '3','4', '5', '6']
-        },
-        yAxis: {
-            title: {
-                text: ''
-            }
-        },
-        series: [{
-            name: 'Earning',
-            data: [0,4,3,4,17,10,30,44,33]
-        }]
-    });
-
-
     // Build the chart
     Highcharts.chart('IndexChartOne', {
       chart: {
@@ -32,7 +9,7 @@ $(function () {
           type: 'pie'
       },
       title: {
-          text: 'Browser market'
+          text: 'Monthly Purchase'
       },
       tooltip: {
           pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -51,18 +28,18 @@ $(function () {
           name: 'Brands',
           colorByPoint: true,
           data: [{
-              name: 'Chrome',
+              name: 'Diary',
               y: 22.41,
               sliced: true,
               selected: true
           }, {
-              name: 'IE',
+              name: 'Vegetables',
               y: 11.84
           }, {
-              name: 'FX',
+              name: 'Grains',
               y: 10.85
           }, {
-              name: 'Edge',
+              name: 'Sea Food',
               y: 4.67
           }]
       }]
@@ -74,7 +51,7 @@ $(function () {
         type: 'column'
         },
         title: {
-            text: 'Monthly Average Revenue'
+            text: 'Yearly Stores Purchase'
         },
         subtitle: {
             text: ''
@@ -117,15 +94,15 @@ $(function () {
             }
         },
         series: [{
-            name: 'Tokyo',
+            name: 'Kanuas',
             data: [49.9, 71.5, 106.4, 129.2]
 
         }, {
-            name: 'London',
+            name: 'Vilnius',
             data: [48.9, 38.8, 39.3, 41.4]
 
         }, {
-            name: 'Berlin',
+            name: 'Palanga',
             data: [42.4, 33.2, 34.5, 39.7]
 
         }]

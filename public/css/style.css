@@ -113,7 +113,7 @@
 
     a:hover,
     a:focus {
-        color: #f3728b;
+        color: #2A5827;
         text-decoration: none;
         outline: 0;
         -webkit-transition: all 0.3s ease-in-out;
@@ -151,8 +151,8 @@
         font-size: 14px;
         text-transform: uppercase;
         color: #ffffff;
-        background: #f3728b;
-        border: 2px solid #f3728b;
+        background: #2A5827;
+        border: 2px solid #2A5827;
         -webkit-border-radius: 2px;
         -ms-border-radius: 2px;
         -o-border-radius: 2px;
@@ -169,7 +169,7 @@
     input[type="button"]:hover,
     input[type="reset"]:hover,
     input[type="submit"]:hover {        
-        color: #f3728b;
+        color: #2A5827;
         background: transparent;
     }
 
@@ -334,8 +334,8 @@
         color: #fff;
     }
 
-    .color-f3728b {
-        color: #f3728b;
+    .color-2A5827 {
+        color: #2A5827;
     }
 
     .color-2ebd59 {
@@ -480,7 +480,7 @@
     }
 
     .top .socails ul li a:hover {
-        color: #f3728b;
+        color: #2A5827;
     }
 
     .top .socails.v2 ul li a:hover {
@@ -536,7 +536,7 @@
 
     #main-nav  ul > li.active > a,
     #main-nav ul.submenu > li:hover > a {
-        color: #f3728b;
+        color: #2A5827;
     }
 
     #main-nav ul.submenu > li.item-has-child > a:after {
@@ -591,7 +591,7 @@
     }
 
     #main-nav > ul.menu li:hover > a {
-        color: #f3728b;
+        color: #2A5827;
     }
 
     #main-nav > ul.menu li:hover > ul.submenu {
@@ -725,7 +725,7 @@
     .show-search a:hover,
     .show-search a i:hover,
     .show-search.active a .icon-search:hover:before {
-        color: #f3728b;
+        color: #2A5827;
     }
 
     #header.style2.v2 .show-search a:hover,
@@ -737,7 +737,7 @@
 
     .show-search.active a .icon-search:before {
         content: "\f00d";
-        color: #f3728b;
+        color: #2A5827;
         font-family: "FontAwesome";
     }
 
@@ -787,7 +787,7 @@
         content: "";
         width: 0;
         height: 3px;
-        background: #f3728b;
+        background: #2A5827;
         position: absolute;
         bottom: 31px;
         left: 0;
@@ -805,7 +805,7 @@
     #header.style2 #main-nav > ul > li > a:hover,
     #header.style2 #main-nav > ul > li.active > a,
     #header.style2 .extra-menu ul li.cart:hover a {
-        color: #f3728b;
+        color: #2A5827;
     }
 
     #header.style2.v2 #main-nav > ul > li > a:hover, 
@@ -865,7 +865,7 @@
     #header.style2.v3 #main-nav > ul > li > a:hover, 
     #header.style2.v3 #main-nav > ul > li.active > a, 
     #header.style2.v3 .extra-menu ul li.cart:hover a {
-        color: #f3728b;
+        color: #2A5827;
     }
 
     #header.style2.v3 #main-nav {
@@ -912,7 +912,7 @@
     .mobile-button:before,
     .mobile-button:after,
     .mobile-button span {
-        background-color:#f3728b;
+        background-color:#2A5827;
         -webkit-transition:all ease 0.3s;
         -moz-transition:all ease 0.3s;
         transition:all ease 0.3s;
@@ -993,7 +993,7 @@
     .mobile-button.v2:before,
     .mobile-button.v2:after,
     .mobile-button.v2 span {
-        background: #f3728b;
+        background: #2A5827;
     }
 
     .mobile-button.v2 {
@@ -1077,7 +1077,7 @@
     #mainnav-mobi ul.submenu > li > a:hover,
     #mainnav-mobi > ul > li > ul > li.active > a,
     #mainnav-mobi ul > li.active > a {
-        color: #f3728b;
+        color: #2A5827;
     }
 
 /* Flat Page Title
@@ -1188,7 +1188,7 @@
     }
 
     .breadcrumbs.style2 ul li a:hover {
-        color: #f3728b;
+        color: #2A5827;
     }
 
     .wrap-title-page.bg-img .bg-breadcrumbs {
@@ -1223,9 +1223,9 @@
 
     .pagination-wrap li:not(.disabled) a:hover,
     .pagination-wrap li.active a {
-        background: #f3728b;
+        background: #2A5827;
         color: #fff;
-        border: 1px solid #f3728b;
+        border: 1px solid #2A5827;
     }
 
     .pagination-wrap li.disabled a:hover {
@@ -1299,7 +1299,7 @@
     }
 
     .widget-about .list-info ul li a:hover {
-        color: #f3728b;
+        color: #2A5827;
     }
 
     .widget-about .list-info ul li a:before {
@@ -1327,7 +1327,7 @@
     }
 
     .widget-about .socails ul li a:hover {
-        color: #f3728b;
+        color: #2A5827;
     }
 
     .widget-about.v2 .socails ul li a:hover,
@@ -1349,7 +1349,7 @@
     }
 
     .widget-link ul li a:hover {
-        color: #f3728b;
+        color: #2A5827;
     }
 
     .widget-link.v2 ul li a:hover {
@@ -1369,7 +1369,7 @@
 
     .widget-link ul li a:after {
         content: "";
-        background: #f3728b;
+        background: #2A5827;
         width: 0;
         height: 1px;
         position: absolute;
@@ -1400,7 +1400,7 @@
     .widget-recent-work .owl-carousel .owl-nav button {
         width: 26px;
         height: 26px;
-        color: #f3728b;
+        color: #2A5827;
         background:  rgba(243,114,139,0.07);
         border: 1px solid rgba(243,114,139,0.18);
         margin-left:  5px;
@@ -1438,7 +1438,7 @@
     }
 
     .widget-recent-work .btn-view-more:hover {
-        color: #f3728b;
+        color: #2A5827;
     }
 
     .btn-view-more:after {
@@ -1458,7 +1458,7 @@
 
     .btn-view-more:hover:after {
         right: -15px;
-        color: #f3728b;
+        color: #2A5827;
     }
 
     /* Widget Counter */
@@ -1523,7 +1523,7 @@
 
     .list-detail li.cost:before{
         content: "\f155 ";
-        color: #f3728b;
+        color: #2A5827;
     }
 
     .list-detail li.start-time:before{
@@ -1548,7 +1548,7 @@
         line-height: 48px;
         padding: 0 29px;
         font-family: "Poppins";
-        background: #f3728b;
+        background: #2A5827;
         color: #fff;
         font-weight: 700;
         font-size: 16px;
@@ -1689,11 +1689,11 @@
     }
 
     .widget-subscribe button.btn-send.v2 {
-        background-color: #f3728b;
+        background-color: #2A5827;
     }
 
     .widget-subscribe button.btn-send:hover.v2 {
-        color: #f3728b;
+        color: #2A5827;
     }
 
     .widget-subscribe button.btn-send:hover {
@@ -1718,7 +1718,7 @@
     .widget-categories .title-widget {
         font-size: 16px;
         color: #fff;
-        background: #f3728b;
+        background: #2A5827;
         line-height: 46px;
         padding: 0 29px;
     }
@@ -1741,7 +1741,7 @@
         content: "";
         width: 0%;
         height: 2px;
-        background: #f3728b;
+        background: #2A5827;
         position: absolute;
         left: 0;
         bottom: -1px;
@@ -1767,7 +1767,7 @@
 
     .widget-categories ul li a:hover,
     .widget-categories ul li a:hover span {
-        color: #f3728b;
+        color: #2A5827;
     }
 
     .widget-categories.v2 {
@@ -1797,7 +1797,7 @@
     .widget-categories.v2 ul li:before {
         content: '';
         font-family: "Font Awesome 5 Free"; 
-        color: #f3728b;
+        color: #2A5827;
         padding-right: 11px;
         font-size: 16px;
     }
@@ -1937,7 +1937,7 @@
     }
 
     .copyright a {
-        color: #f3728b;
+        color: #2A5827;
         opacity: 0.8;
     }
 
@@ -1956,7 +1956,7 @@
     }
 
     .widget.no-border ul li a:hover {
-        color: #f3728b;
+        color: #2A5827;
     }
 
     .widget.no-border.v2 ul li a:hover {
@@ -2062,8 +2062,8 @@
         padding: 0 10px;
         border-radius: 4px;
         display: inline-block;
-        border: 2px solid #f3728b;
-        color: #f3728b;
+        border: 2px solid #2A5827;
+        color: #2A5827;
         font-size: 16px;
         font-weight: 700;
     }
@@ -2076,7 +2076,7 @@
         padding: 5px 28px;
         display: inline-block;
         color: #fff;
-        background-color: #f3728b;
+        background-color: #2A5827;
         font-size: 16px;
         font-weight: 700;
         font-family: "Roboto";
@@ -2084,7 +2084,7 @@
     }
 
     .flat-button.btn-google:hover {
-        color: #f3728b;
+        color: #2A5827;
     }
 
     .flat-button.btn-google:before {
@@ -2407,17 +2407,17 @@
         padding: 0 16px;
         line-height: 37px;
         margin-left: 15px;
-        border: 2px solid #f3728b;
+        border: 2px solid #2A5827;
         border-radius: 4px;
         font-size: 16px;
         font-weight: 700;
         font-family: "Poppins";
         display: inline-block;
-        color: #f3728b;
+        color: #2A5827;
     }
 
     .flat-button.btn-buy.v2 {
-        background-color: #f3728b;
+        background-color: #2A5827;
         color: #fff;
     }
 
@@ -2434,7 +2434,7 @@
     }
 
     .btn-cart {
-        color: #f3728b;
+        color: #2A5827;
         font-size: 14px;
         font-weight: 500;
         line-height: 43px;
@@ -2445,7 +2445,7 @@
     }
 
     .btn-cart:hover.v2 {
-        color: #f3728b; 
+        color: #2A5827; 
     }
 
     .btn-cart:hover {
@@ -2703,7 +2703,7 @@
         display: inline-block;
         line-height: 49px;
         padding: 3px 54px 3px 34px;
-        background: #f3728b;
+        background: #2A5827;
         color: #fff;
     }
 
@@ -2829,7 +2829,7 @@
     }
 
     #scroll-top:hover:before {
-        background-color:#f3728b;
+        background-color:#2A5827;
     }
     
     .v2#scroll-top:hover:before {
@@ -2863,7 +2863,7 @@
         vertical-align: top;
         display: inline-block;
         width: 100%;
-        background-color: #f3728b;
+        background-color: #2A5827;
         animation: loader-inner 2s infinite ease-in;
     }
 
@@ -2964,7 +2964,7 @@
         top: 0;
         content: "\f104";
         font-family: "FontAwesome";
-        color: #f3728b;
+        color: #2A5827;
         font-size: 22px;
     }
 
@@ -2981,7 +2981,7 @@
         display: block;
         margin-top: 10px;
         font-size: 25px;
-        color: #f3728b;
+        color: #2A5827;
         -webkit-animation: fa-spin 2s infinite linear;
                 animation: fa-spin 2s infinite linear; 
         -webkit-transition: all 0.3s ease-in-out;
@@ -3076,8 +3076,8 @@
     }
 
     .sw-even a:hover {
-        background-color: #f3728b;
-        border: 1px solid #f3728b;
+        background-color: #2A5827;
+        border: 1px solid #2A5827;
         color: #fff !important;
     }
 
@@ -3125,7 +3125,7 @@
     }
 
     .sw-odd .ws-colors #color1 {
-        background-color: #f3728b;
+        background-color: #2A5827;
     }
 
     .sw-odd .ws-colors #color2 {
@@ -3250,7 +3250,7 @@
     .sw-odd .sw-image .sw-buy {
         width: 100%;    
         border: none;
-        background: #f3728b; 
+        background: #2A5827; 
         position: relative; 
         height: 35px;
         line-height: 37px;
@@ -3276,7 +3276,7 @@
     }
 
     .sw-odd .sw-image .sw-buy:hover:before {
-        color: #f3728b;
+        color: #2A5827;
     }
 
     .home-boxed .boxed {
@@ -3289,3 +3289,7 @@
         box-shadow: 0 0 16px 1px #7f7f7f;
         overflow: hidden;
     }
+
+.wrap-title-page.bg-img .bg-breadcrumbs{
+    display: none;
+}

@@ -69,7 +69,7 @@
         content: "\ea2f";
         font-family: "bf-icon";
         font-size: 18px;
-        color: #f3728b;
+        color: #2A5827;
         position: absolute;
         left: 28px;
         top: 50%;
@@ -111,7 +111,7 @@
         top: 50%;
         right: 10px;
         transform: translateY(-50%);
-        color: #f3728b;
+        color: #2A5827;
         font-size: 26px;
     }
 
@@ -170,7 +170,7 @@
         font-family: "bf-icon";
         position: absolute;
         left: 109px;
-        color: #f3728b;
+        color: #2A5827;
     }
 
     .flat-button.btn-cart:hover:after,
@@ -182,14 +182,14 @@
 
     .flat-button.btn-cart.v2 {
         line-height: 35px;
-        border: 2px solid #f3728b;
+        border: 2px solid #2A5827;
         border-radius: 4px;
         padding: 0px 15px 0 36px;
         font-size: 14px;
         font-weight: 500;
         font-family: "Roboto";
         display: inline-block;
-        color: #f3728b;
+        color: #2A5827;
     }
 
     .flat-button.v2.btn-cart:after {

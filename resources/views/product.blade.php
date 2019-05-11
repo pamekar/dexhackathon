@@ -17,7 +17,6 @@
                     <li><a href="#">{{$product->product_name}}</a></li>
                 </ul>
             </div>
-            <img src="png/bg-white.png" alt="bookflare" class="bg-breadcrumbs style2">
         </div>
     </section> <!-- /.flat-title-page -->
 
@@ -28,7 +27,7 @@
                     <div class="content-page-wrap">
                         <div class="course-single">
                             <div class="img-single">
-                                <a href="#"><img src="/png/img-details.png" alt="bookflare"></a>
+                                <a href="#"><img src="{{$product->product_image}}" alt="bookflare" class="img img-thumbnail" style="width:800px;"></a>
                             </div>
                             <div class="content">
                                 <div class="heading">

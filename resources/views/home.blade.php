@@ -1,23 +1,27 @@
-@extends('layouts.app')
+@extends('layouts.user_dash')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
+    <!-- start with the real content -->
+    <div id="real">
+        <div class="row">
+            <!-- start chatts -->
+            <div class="col-lg-6">
+                <div class="card">
+                    <div id="IndexChartOne" style="height: 320px;"></div>
                 </div>
             </div>
+            <!-- end charts -->
+
+            <!-- start chatts -->
+            <div class="col-lg-6">
+                <div class="card">
+                    <div id="IndexChartTwo" style="height: 320px;"></div>
+                </div>
+            </div>
+            <!-- end charts -->
+
         </div>
     </div>
-</div>
+    <!-- end the real content -->
 @endsection

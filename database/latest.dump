@@ -55,6 +55,34 @@ INSERT INTO `blog_posts` VALUES (1,0,1,'My First Blog Post',NULL,'An example blo
 UNLOCK TABLES;
 
 --
+-- Table structure for table `carts`
+--
+
+DROP TABLE IF EXISTS `carts`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `carts` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `user_id` bigint(20) DEFAULT NULL,
+  `product_id` bigint(20) DEFAULT NULL,
+  `status` enum('pending','canceled','processed') DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `carts`
+--
+
+LOCK TABLES `carts` WRITE;
+/*!40000 ALTER TABLE `carts` DISABLE KEYS */;
+INSERT INTO `carts` VALUES (1,NULL,26,'pending','2019-05-11 08:07:29','2019-05-11 08:07:29'),(2,NULL,26,'pending','2019-05-11 08:08:53','2019-05-11 08:08:53'),(3,NULL,26,'pending','2019-05-11 08:09:43','2019-05-11 08:09:43'),(4,NULL,35,'pending','2019-05-11 08:14:26','2019-05-11 08:14:26'),(5,NULL,35,'pending','2019-05-11 08:15:19','2019-05-11 08:15:19');
+/*!40000 ALTER TABLE `carts` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `categories`
 --
 
@@ -98,7 +126,6 @@ CREATE TABLE `customers` (
   `user_id` bigint(20) unsigned NOT NULL,
   `address` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `city` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `health_issues` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -111,7 +138,7 @@ CREATE TABLE `customers` (
 
 LOCK TABLES `customers` WRITE;
 /*!40000 ALTER TABLE `customers` DISABLE KEYS */;
-INSERT INTO `customers` VALUES (1,4,'675 Parisian Landing Suite 918','Utena','Madness','2019-05-10 07:22:02','2019-05-10 07:22:02'),(2,5,'60140 Raina Land','Kanuas','Hypertension','2019-05-10 07:22:03','2019-05-10 07:22:03'),(3,6,'92790 Nichole Valley','Utena','Hypertension','2019-05-10 07:22:03','2019-05-10 07:22:03'),(4,7,'9891 Gislason Pass','Vilinius','Diabetes','2019-05-10 07:22:03','2019-05-10 07:22:03'),(5,8,'68781 Runte Crossing Suite 162','Utena','Madness','2019-05-10 07:22:03','2019-05-10 07:22:03'),(6,9,'781 Annabelle Coves Apt. 743','Kanuas','Hypertension','2019-05-10 07:22:03','2019-05-10 07:22:03'),(7,10,'10191 Rath Tunnel Suite 206','Utena','Diabetes','2019-05-10 07:22:03','2019-05-10 07:22:03'),(8,11,'4487 Lubowitz Harbor Suite 084','Kanuas','Hypertension','2019-05-10 07:22:03','2019-05-10 07:22:03'),(9,12,'358 Macejkovic Walks Suite 747','Kanuas','Hypertension','2019-05-10 07:22:03','2019-05-10 07:22:03'),(10,13,'17576 Augustus Prairie','Utena','Hypertension','2019-05-10 07:22:03','2019-05-10 07:22:03');
+INSERT INTO `customers` VALUES (1,4,'675 Parisian Landing Suite 918','Utena','2019-05-10 07:22:02','2019-05-10 07:22:02'),(2,5,'60140 Raina Land','Kanuas','2019-05-10 07:22:03','2019-05-10 07:22:03'),(3,6,'92790 Nichole Valley','Utena','2019-05-10 07:22:03','2019-05-10 07:22:03'),(4,7,'9891 Gislason Pass','Vilinius','2019-05-10 07:22:03','2019-05-10 07:22:03'),(5,8,'68781 Runte Crossing Suite 162','Utena','2019-05-10 07:22:03','2019-05-10 07:22:03'),(6,9,'781 Annabelle Coves Apt. 743','Kanuas','2019-05-10 07:22:03','2019-05-10 07:22:03'),(7,10,'10191 Rath Tunnel Suite 206','Utena','2019-05-10 07:22:03','2019-05-10 07:22:03'),(8,11,'4487 Lubowitz Harbor Suite 084','Kanuas','2019-05-10 07:22:03','2019-05-10 07:22:03'),(9,12,'358 Macejkovic Walks Suite 747','Kanuas','2019-05-10 07:22:03','2019-05-10 07:22:03'),(10,13,'17576 Augustus Prairie','Utena','2019-05-10 07:22:03','2019-05-10 07:22:03');
 /*!40000 ALTER TABLE `customers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -557,6 +584,7 @@ DROP TABLE IF EXISTS `transactions`;
 CREATE TABLE `transactions` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` bigint(20) unsigned NOT NULL,
+  `ref` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `product_id` bigint(20) unsigned NOT NULL,
   `quantity` int(11) NOT NULL,
   `amount` int(11) NOT NULL,
@@ -574,7 +602,7 @@ CREATE TABLE `transactions` (
 
 LOCK TABLES `transactions` WRITE;
 /*!40000 ALTER TABLE `transactions` DISABLE KEYS */;
-INSERT INTO `transactions` VALUES (1,5,6,46,40400,'delivered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(2,13,31,4,82900,'delivered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(3,10,5,78,78000,'delivered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(4,5,27,32,16800,'ordered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(5,5,19,49,83600,'ordered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(6,13,12,9,98900,'ordered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(7,8,21,63,4200,'ordered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(8,5,3,79,54100,'delivered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(9,11,7,9,14000,'delivered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(10,12,20,77,61200,'delivered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(11,10,13,28,15800,'delivered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(12,13,23,26,50400,'ordered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(13,8,11,54,74600,'delivered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(14,6,32,63,80000,'ordered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(15,10,2,9,76900,'ordered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(16,7,7,57,71300,'ordered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(17,4,22,26,57100,'delivered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(18,13,32,11,28300,'delivered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(19,6,11,8,85400,'ordered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(20,5,6,29,91700,'delivered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(21,11,34,60,85100,'ordered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(22,7,22,6,64000,'ordered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(23,12,33,54,98100,'ordered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(24,8,29,28,30500,'ordered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(25,9,23,33,85800,'delivered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(26,8,12,19,98600,'delivered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(27,11,19,61,12000,'ordered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(28,4,11,32,43700,'delivered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(29,13,6,76,76000,'delivered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(30,12,12,12,7600,'delivered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(31,10,32,58,88200,'delivered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(32,5,12,25,86900,'ordered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(33,13,2,23,1500,'ordered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(34,10,34,58,86200,'ordered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(35,9,22,77,10100,'ordered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(36,11,20,45,17200,'delivered','2019-05-10 10:01:38','2019-05-10 10:01:38','paid'),(37,6,21,7,15400,'ordered','2019-05-10 10:01:38','2019-05-10 10:01:38','paid'),(38,8,16,19,41700,'ordered','2019-05-10 10:01:38','2019-05-10 10:01:38','paid'),(39,8,19,44,70500,'ordered','2019-05-10 10:01:38','2019-05-10 10:01:38','paid'),(40,8,4,1,80200,'delivered','2019-05-10 10:01:38','2019-05-10 10:01:38','paid');
+INSERT INTO `transactions` VALUES (1,5,NULL,6,46,40400,'delivered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(2,13,NULL,31,4,82900,'delivered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(3,10,NULL,5,78,78000,'delivered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(4,5,NULL,27,32,16800,'ordered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(5,5,NULL,19,49,83600,'ordered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(6,13,NULL,12,9,98900,'ordered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(7,8,NULL,21,63,4200,'ordered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(8,5,NULL,3,79,54100,'delivered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(9,11,NULL,7,9,14000,'delivered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(10,12,NULL,20,77,61200,'delivered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(11,10,NULL,13,28,15800,'delivered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(12,13,NULL,23,26,50400,'ordered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(13,8,NULL,11,54,74600,'delivered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(14,6,NULL,32,63,80000,'ordered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(15,10,NULL,2,9,76900,'ordered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(16,7,NULL,7,57,71300,'ordered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(17,4,NULL,22,26,57100,'delivered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(18,13,NULL,32,11,28300,'delivered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(19,6,NULL,11,8,85400,'ordered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(20,5,NULL,6,29,91700,'delivered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(21,11,NULL,34,60,85100,'ordered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(22,7,NULL,22,6,64000,'ordered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(23,12,NULL,33,54,98100,'ordered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(24,8,NULL,29,28,30500,'ordered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(25,9,NULL,23,33,85800,'delivered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(26,8,NULL,12,19,98600,'delivered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(27,11,NULL,19,61,12000,'ordered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(28,4,NULL,11,32,43700,'delivered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(29,13,NULL,6,76,76000,'delivered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(30,12,NULL,12,12,7600,'delivered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(31,10,NULL,32,58,88200,'delivered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(32,5,NULL,12,25,86900,'ordered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(33,13,NULL,2,23,1500,'ordered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(34,10,NULL,34,58,86200,'ordered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(35,9,NULL,22,77,10100,'ordered','2019-05-10 10:01:37','2019-05-10 10:01:37','paid'),(36,11,NULL,20,45,17200,'delivered','2019-05-10 10:01:38','2019-05-10 10:01:38','paid'),(37,6,NULL,21,7,15400,'ordered','2019-05-10 10:01:38','2019-05-10 10:01:38','paid'),(38,8,NULL,16,19,41700,'ordered','2019-05-10 10:01:38','2019-05-10 10:01:38','paid'),(39,8,NULL,19,44,70500,'ordered','2019-05-10 10:01:38','2019-05-10 10:01:38','paid'),(40,8,NULL,4,1,80200,'delivered','2019-05-10 10:01:38','2019-05-10 10:01:38','paid');
 /*!40000 ALTER TABLE `transactions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -681,4 +709,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-10 14:08:48
+-- Dump completed on 2019-05-11 12:48:29

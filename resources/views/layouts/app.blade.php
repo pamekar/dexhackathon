@@ -13,8 +13,9 @@
     <link rel="stylesheet" type="text/css" href="/css/responsive.css">
     <link rel="stylesheet" type="text/css" href="/css/color1.css" id="colors">
 
-    <link rel="shortcut icon" href="png/favicon.png">
-    <link rel="apple-touch-icon-precomposed" href="png/favicon-apple.png">
+    <link rel="shortcut icon" href="/png/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="/png/favicon-apple.png">
+    @yield('styles')
 </head>
 <body>
 <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -23,27 +24,35 @@
         <div class="container">
             <div class="header-wrap clearfix">
                 <div id="logo">
-                    <a href="index-2.html"><img src="png/logo.png" alt="bookflare" width="157" height="29" data-retina="images/logo/logo@2x.png" data-width="157" data-height="29"></a>
+                    <a href="/"><img src="/png/logo.png" alt="farmfresh" width="157" height="29"
+                                                data-retina="images/logo/logo@2x.png" data-width="157" data-height="29"></a>
                 </div>
                 <div class="nav-wrap flat-text-right style1">
                     <nav id="main-nav">
-                        <ul class="menu" >
+                        <ul class="menu">
                             <li>
                                 <a href="{{url('/')}}">Home</a>
                             </li>
                             <li>
                                 <a href="{{url('/products')}}">Products</a>
                             </li>
-                            <li  class="">
-                                <a href="{{url('/login')}}">Login</a>
-                            </li>
-                            <li>
-                                <a href="#">Register</a>
-                                <ul class="submenu">
-                                    <li><a href="{{url('/register')}}">As Customer</a></li>
-                                    <li><a href="{{url('/register')}}">As Farmer</a></li>
-                                </ul>
-                            </li>
+                            @guest
+                                <li class="">
+                                    <a href="{{url('/login')}}">Login</a>
+                                </li>
+                                <li>
+                                    <a href="#">Register</a>
+                                    <ul class="submenu">
+                                        <li><a href="{{url('/register')}}">As Customer</a></li>
+                                        <li><a href="{{url('/register')}}">As Farmer</a></li>
+                                    </ul>
+                                </li>
+                            @endguest
+                            @auth
+                                <li class="">
+                                    <a href="{{url('/home')}}">Dashboard</a>
+                                </li>
+                            @endauth
                         </ul>
                     </nav>
                 </div>
@@ -57,17 +66,20 @@
                         </div>
                     </div>
                     <div class="cart nav-top-cart-wrapper">
-                        <a href="#"><span class="bf-icon icon-cart"></span></a> <span class="count-cart">{{$cart->count()}}</span>
+                        <a href="#"><span class="bf-icon icon-cart"></span></a> <span
+                                class="count-cart" style="background-color:#b3e364;">{{$cart->count()}}</span>
                         <div class="nav-shop-cart">
                             <div class="widget_shopping_cart_content">
                                 <div class="woocommerce-min-cart-wrap">
                                     <ul class="woocommerce-mini-cart cart_list product_list_widget flat-text-center">
-                                        @foreach($cart as $item)<li class="woocommerce-mini-cart-item mini_cart_item">
-                                            {{$item->product->product_name}}
-                                        </li>
-                                            @endforeach
+                                        @foreach($cart as $item)
+                                            <li class="woocommerce-mini-cart-item mini_cart_item">
+                                                {{$item->product->product_name}}
+                                            </li>
+                                        @endforeach
                                     </ul>
-                                    <a href="{{url('payments/cart')}}" class="flat-button btn-buy border-ra4 float-right">BUY NOW</a>
+                                    <a href="{{url('payments/cart')}}"
+                                       class="flat-button btn-buy border-ra4 text-center" style="color:#b3e364">Checkout</a>
                                 </div><!-- /.widget_shopping_cart_content -->
                             </div>
                         </div>
@@ -82,41 +94,8 @@
 
     @yield('content')
 
-    <section class="flat-feature parallax parallax2">
-        <div class="container">
-            <div class="row flat-iconbox style1">
-                <div class="col-lg-4 col-md-4">
-                    <div class="iconbox style1 left">
-                        <div class="iconbox-icon">
-                            <span class="icon-book"></span>
-                        </div>
-                        <div class="iconbox-content">
-                            <h5 class="title">80,000 ONLINE COURSES</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4">
-                    <div class="iconbox style1 center">
-                        <div class="iconbox-icon">
-                            <span class="icon-people"></span>
-                        </div>
-                        <div class="iconbox-content">
-                            <h5 class="title">EXPERT INSTRUCTION</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4">
-                    <div class="iconbox style1 right">
-                        <div class="iconbox-icon">
-                            <span class="icon-key"></span>
-                        </div>
-                        <div class="iconbox-content">
-                            <h5 class="title">LIFETIME ACCESS</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section class="section-images" style="padding:0">
+        <img src="/Export/Newsletter-image.jpg">
     </section>
 
     <div class="bottom bg-15222e">
@@ -124,17 +103,7 @@
             <div class="row">
                 <div class="  col-md-6">
                     <div class="copyright flat-text-left">
-                        <p>© Copyright 2018 <a href="#">tophive</a>. All Rights Reserved.</p>
-                    </div>
-                </div>
-                <div class="  col-md-6">
-                    <div class="widget flat-text-right no-border">
-                        <ul class="list">
-                            <li><a href="#">Privacy</a></li>
-                            <li><a href="#">Terms</a></li>
-                            <li><a href="#">Cookie Policy</a></li>
-                            <li><a href="#">Sitemap</a></li>
-                        </ul>
+                        <p>© Copyright {{date('Y')}} <a href="#">{{config('app.name')}}</a>. All Rights Reserved.</p>
                     </div>
                 </div>
             </div>
@@ -153,10 +122,8 @@
 <script src="/js/jquery.easing.js"></script>
 <script src="/js/jquery.cookie.js"></script>
 <script src="/js/smoothscroll.js"></script>
-<script src="/js/switcher.js"></script>
 <script src="/js/main.js"></script>
 <script src="/js/app.js"></script>
-
 @yield('scripts')
 </body>
 </html>

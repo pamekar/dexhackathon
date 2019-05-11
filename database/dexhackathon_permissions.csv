@@ -1,0 +1,16 @@
+id,key,table_name,created_at,updated_at
+,browse_products,products,2019-05-10 08:22:43,2019-05-10 08:22:43
+,read_products,products,2019-05-10 08:22:43,2019-05-10 08:22:43
+,edit_products,products,2019-05-10 08:22:43,2019-05-10 08:22:43
+,add_products,products,2019-05-10 08:22:43,2019-05-10 08:22:43
+,delete_products,products,2019-05-10 08:22:43,2019-05-10 08:22:43
+,browse_customers,customers,2019-05-10 08:22:43,2019-05-10 08:22:43
+,read_customers,customers,2019-05-10 08:22:43,2019-05-10 08:22:43
+,edit_customers,customers,2019-05-10 08:22:43,2019-05-10 08:22:43
+,add_customers,customers,2019-05-10 08:22:43,2019-05-10 08:22:43
+,delete_customers,customers,2019-05-10 08:22:43,2019-05-10 08:22:43
+,browse_categories,categories,2019-05-10 08:22:43,2019-05-10 08:22:43
+,read_categories,categories,2019-05-10 08:22:43,2019-05-10 08:22:43
+,edit_categories,categories,2019-05-10 08:22:43,2019-05-10 08:22:43
+,add_categories,categories,2019-05-10 08:22:43,2019-05-10 08:22:43
+,delete_categories,categories,2019-05-10 08:22:43,2019-05-10 08:22:43

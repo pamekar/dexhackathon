@@ -20,9 +20,17 @@ Route::resource('/user-profile', 'UserProfileController');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'UserController@index')->name('user.dashboard');
+Route::get('/home/profile', 'ProfileController@index')->name('user.profile');
+Route::get('home/transaction', 'TransactionController@index')
+    ->name('user.transaction');
+Route::get('/home/invoice/{orderref}', 'TransactionController@invoice')
+    ->name('user.invoice');
+Route::get('payments/add/cart/{id}', 'PaymentsController@cart');
+Route::get('payments/buy/cart/{id}', 'PaymentsController@buy');
+Route::get('payments/cart', 'PaymentsController@index');
 
-
+Route::get('/home/plan', 'PlanController@index')->name('user.plan');
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });

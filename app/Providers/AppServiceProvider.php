@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Cart;
 use App\Category;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -52,10 +54,12 @@ class AppServiceProvider extends ServiceProvider
             '7ffe53'
         ];
 
+        $cart = Cart::where('user_id',Auth::id())->where('status','pending')->get();
         View::share([
             'categories' => $categories,
             'colors'     => $colors,
-            'background' => $background
+            'background' => $background,
+            'cart'       => $cart
         ]);
     }
 }

@@ -45,8 +45,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="wrap-cart flat-text-right">
-                                            <a href="#" class="btn-cart">Add To Cart</a>
-                                            <a href="#" class="flat-button btn-buy border-ra4 float-right">BUY NOW</a>
+                                            <a href="{{url("payments/add/cart/$product->id")}}" class="btn-cart">Add To Cart</a>
+                                            <a href="{{url("payments/buy/cart/$product->id")}}" class="flat-button btn-buy border-ra4 float-right">BUY NOW</a>
                                         </div>
                                     </div>
                                 </div>

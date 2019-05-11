@@ -29,52 +29,19 @@
                     <nav id="main-nav">
                         <ul class="menu" >
                             <li>
-                                <a href="#">HOME</a>
-                                <ul class="submenu">
-                                    <li ><a href="index-2.html">HOME 1</a></li>
-                                    <li><a href="index2.html">HOME 2</a></li>
-                                    <li><a href="index3.html">HOME 3</a></li>
-                                    <li><a href="index4.html">HOME 4</a></li>
-                                    <li><a href="index-animate.html">HOME ANIMATE</a></li>
-                                </ul>
-                            </li>
-                            <li  class="active">
-                                <a href="#">COURSES</a>
-                                <ul class="submenu">
-                                    <li><a href="courses-grid-v1.html">COURSES V1</a></li>
-                                    <li><a href="courses-grid-v2.html">COURSES V2</a></li>
-                                    <li class="active"><a href="courses-grid-v3.html">COURSES V3</a></li>
-                                    <li><a href="courses-single.html">COURSES SINGLE</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="instructors.html">INSTRUCTORS</a></li>
-                            <li>
-                                <a href="#">EVENTS</a>
-                                <ul class="submenu">
-                                    <li><a href="event-v1.html">EVENT V1</a></li>
-                                    <li><a href="event-v2.html">EVENT V2</a></li>
-                                    <li><a href="event-single.html">EVENT SINGLE</a></li>
-                                </ul>
-                            </li>
-                            <li >
-                                <a href="#">PAGES</a>
-                                <ul class="submenu">
-                                    <li><a href="faqs.html">FAQs</a></li>
-                                    <li><a href="about-us.html">ABOUT US</a></li>
-                                    <li class="item-has-child">
-                                        <a href="#">SHOP</a>
-                                        <ul class="submenu">
-                                            <li ><a href="shop.html">SHOP</a></li>
-                                            <li><a href="shop-single.html">SHOP SINGLE</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
+                                <a href="{{url('/')}}">Home</a>
                             </li>
                             <li>
-                                <a href="#">BLOG</a>
+                                <a href="{{url('/products')}}">Products</a>
+                            </li>
+                            <li  class="">
+                                <a href="{{url('/login')}}">Login</a>
+                            </li>
+                            <li>
+                                <a href="#">Register</a>
                                 <ul class="submenu">
-                                    <li><a href="blog.html">BLOG</a></li>
-                                    <li><a href="blog-single.html">BLOG SINGLE</a></li>
+                                    <li><a href="{{url('/register')}}">As Customer</a></li>
+                                    <li><a href="{{url('/register')}}">As Farmer</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -90,15 +57,17 @@
                         </div>
                     </div>
                     <div class="cart nav-top-cart-wrapper">
-                        <a href="#"><span class="bf-icon icon-cart"></span></a> <span class="count-cart">0</span>
+                        <a href="#"><span class="bf-icon icon-cart"></span></a> <span class="count-cart">{{$cart->count()}}</span>
                         <div class="nav-shop-cart">
                             <div class="widget_shopping_cart_content">
                                 <div class="woocommerce-min-cart-wrap">
                                     <ul class="woocommerce-mini-cart cart_list product_list_widget flat-text-center">
-                                        <li class="woocommerce-mini-cart-item mini_cart_item">
-                                            <span>No Items in Shopping Cart</span>
+                                        @foreach($cart as $item)<li class="woocommerce-mini-cart-item mini_cart_item">
+                                            {{$item->product->product_name}}
                                         </li>
+                                            @endforeach
                                     </ul>
+                                    <a href="{{url('payments/cart')}}" class="flat-button btn-buy border-ra4 float-right">BUY NOW</a>
                                 </div><!-- /.widget_shopping_cart_content -->
                             </div>
                         </div>
@@ -150,261 +119,6 @@
         </div>
     </section>
 
-    <footer id="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="widget-about">
-                        <div id="logo-ft">
-                            <a href="index-2.html"><img src="png/logo-ft.png" alt="bookflare"  width="157" height="29" data-retina="images/logo/logo-ft@2x.png" data-width="157" data-height="29"></a>
-                        </div>
-                        <p class="description">We are a new design studio based in USA. We have over 20 years of combined experience, and know a thing or two about designing websites and mobile apps.</p>
-                        <div class="list-info">
-                            <ul>
-                                <li class="address"><a href="#">1107 Wood Street Saginaw, MI New York 48607</a></li>
-                                <li class="phone"><a href="#">+123 345 678 000</a></li>
-                                <li class="mail"><a href="#">info@example.com</a></li>
-                            </ul>
-                        </div>
-                        <div class="socails">
-                            <ul class="list">
-                                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                                <li><a href="#"><span class="fa fa-linkedin-square"></span></a></li>
-                                <li><a href="#"><span class="fa fa-facebook-official"></span></a></li>
-                                <li><a href="#"><span class="fa fa-skype"></span></a></li>
-                                <li><a href="#"><span class="fa fa-pinterest-square"></span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="widget-link widget-ft">
-                        <h6 class=" widget-title">USEFULL LINK</h6>
-                        <div class="list-wrap clearfix">
-                            <ul class="one-of-two">
-                                <li><a href="#">Register Activation Key</a></li>
-                                <li><a href="#"> Our Plans</a></li>
-                                <li><a href="#"> Government Solutions</a></li>
-                                <li><a href="#">Academic Solutions</a></li>
-                                <li><a href="#">Intellectual Property</a></li>
-                            </ul>
-                            <ul class="one-of-two">
-                                <li><a href="#">Free Trial</a></li>
-                                <li><a href="#"> Support</a></li>
-                                <li><a href="#">Contact Us</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="widget-recent-work widget-ft">
-                        <h6 class="widget-title">RECENT WORK</h6>
-                        <div class="flat-recentOwl"  data-column="4" data-column2="3" data-loop="true"  data-column3="2" data-gap ="0" data-dots="false" data-nav="true" >
-                            <div class="flat-imgbox style1 clearfix owl-carousel">
-                                <div class="column">
-                                    <div class="imgbox style1 transition-vline">
-                                        <a href="#">
-                                            <div class="imgbox-img img-vline">
-                                                <img src="png/work-1.png" alt="bookflare">
-                                                <div class="overlay">
-                                                    <span class="vline"></span>
-                                                    <span class="vline vline-bottom"></span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="imgbox style1 transition-vline">
-                                        <a href="#">
-                                            <div class="imgbox-img img-vline">
-                                                <img src="png/work-5.png" alt="bookflare">
-                                                <div class="overlay">
-                                                    <span class="vline"></span>
-                                                    <span class="vline vline-bottom"></span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="column">
-                                    <div class="imgbox style1 transition-vline">
-                                        <a href="#">
-                                            <div class="imgbox-img img-vline">
-                                                <img src="png/work-2.png" alt="bookflare">
-                                                <div class="overlay">
-                                                    <span class="vline"></span>
-                                                    <span class="vline vline-bottom"></span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="imgbox style1 transition-vline">
-                                        <a href="#">
-                                            <div class="imgbox-img img-vline">
-                                                <img src="png/work-6.png" alt="bookflare">
-                                                <div class="overlay">
-                                                    <span class="vline"></span>
-                                                    <span class="vline vline-bottom"></span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="column">
-                                    <div class="imgbox style1 transition-vline">
-                                        <a href="#">
-                                            <div class="imgbox-img img-vline">
-                                                <img src="png/work-3.png" alt="bookflare">
-                                                <div class="overlay">
-                                                    <span class="vline"></span>
-                                                    <span class="vline vline-bottom"></span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="imgbox style1 transition-vline">
-                                        <a href="#">
-                                            <div class="imgbox-img img-vline">
-                                                <img src="png/work-7.png" alt="bookflare">
-                                                <div class="overlay">
-                                                    <span class="vline"></span>
-                                                    <span class="vline vline-bottom"></span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="column">
-                                    <div class="imgbox style1 transition-vline">
-                                        <a href="#">
-                                            <div class="imgbox-img img-vline">
-                                                <img src="png/work-4.png" alt="bookflare">
-                                                <div class="overlay">
-                                                    <span class="vline"></span>
-                                                    <span class="vline vline-bottom"></span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="imgbox style1 transition-vline">
-                                        <a href="#">
-                                            <div class="imgbox-img img-vline">
-                                                <img src="png/work-8.png" alt="bookflare">
-                                                <div class="overlay">
-                                                    <span class="vline"></span>
-                                                    <span class="vline vline-bottom"></span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="column">
-                                    <div class="imgbox style1 transition-vline">
-                                        <a href="#">
-                                            <div class="imgbox-img img-vline">
-                                                <img src="png/work-1.png" alt="bookflare">
-                                                <div class="overlay">
-                                                    <span class="vline"></span>
-                                                    <span class="vline vline-bottom"></span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="imgbox style1 transition-vline">
-                                        <a href="#">
-                                            <div class="imgbox-img img-vline">
-                                                <img src="png/work-2.png" alt="bookflare">
-                                                <div class="overlay">
-                                                    <span class="vline"></span>
-                                                    <span class="vline vline-bottom"></span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="column">
-                                    <div class="imgbox style1 transition-vline">
-                                        <a href="#">
-                                            <div class="imgbox-img img-vline">
-                                                <img src="png/work-3.png" alt="bookflare">
-                                                <div class="overlay">
-                                                    <span class="vline"></span>
-                                                    <span class="vline vline-bottom"></span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="imgbox style1 transition-vline">
-                                        <a href="#">
-                                            <div class="imgbox-img img-vline">
-                                                <img src="png/work-4.png" alt="bookflare">
-                                                <div class="overlay">
-                                                    <span class="vline"></span>
-                                                    <span class="vline vline-bottom"></span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="column">
-                                    <div class="imgbox style1 transition-vline">
-                                        <a href="#">
-                                            <div class="imgbox-img img-vline">
-                                                <img src="png/work-5.png" alt="bookflare">
-                                                <div class="overlay">
-                                                    <span class="vline"></span>
-                                                    <span class="vline vline-bottom"></span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="imgbox style1 transition-vline">
-                                        <a href="#">
-                                            <div class="imgbox-img img-vline">
-                                                <img src="png/work-6.png" alt="bookflare">
-                                                <div class="overlay">
-                                                    <span class="vline"></span>
-                                                    <span class="vline vline-bottom"></span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="column">
-                                    <div class="imgbox style1 transition-vline">
-                                        <a href="#">
-                                            <div class="imgbox-img img-vline">
-                                                <img src="png/work-7.png" alt="bookflare">
-                                                <div class="overlay">
-                                                    <span class="vline"></span>
-                                                    <span class="vline vline-bottom"></span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="imgbox style1 transition-vline">
-                                        <a href="#">
-                                            <div class="imgbox-img img-vline">
-                                                <img src="png/work-8.png" alt="bookflare">
-                                                <div class="overlay">
-                                                    <span class="vline"></span>
-                                                    <span class="vline vline-bottom"></span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="wrap-btn">
-                            <a href="#" class="btn-view-more">VIEW MORE</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
     <div class="bottom bg-15222e">
         <div class="container">
             <div class="row">
@@ -442,5 +156,7 @@
 <script src="/js/switcher.js"></script>
 <script src="/js/main.js"></script>
 <script src="/js/app.js"></script>
+
+@yield('scripts')
 </body>
 </html>

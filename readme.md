@@ -1,5 +1,5 @@
-# name_of_project - A DigitalXP Project
-Made with ❤️ by [name_of_team](https://www.digitalexplorers.eu)
+# Farm Fresh - A Digital Explorers Hackathon Project
+Made with ❤️ by [Digital Explorers Hackathon Team11](https://www.digitalexplorers.eu)
 ## Installation Steps
 
 ### 1. Require the Package
@@ -79,3 +79,22 @@ $ php artisan voyager:admin your@email.com --create
 And you will be prompted for the user's name and password.
 
 NOTE: `$ php artisan migrate:refresh` should be used when necessary, and for every of such command. run `$ php artisan voyager:install`
+
+## How to Login
+You should use any of the following accounts to login -
+___
+>**Admin**
+
+>**email:** `admin@admin.com`   
+>**password:** `password`
+___
+>**Farmer**
+>
+>**email:** `farmer@site.com`   
+>**password:** `password`
+___
+>**User**
+>
+>**email:** `user@site.com`   
+>**password:** `password`
+___
